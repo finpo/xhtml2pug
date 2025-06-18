@@ -19,7 +19,7 @@
       "require": "./dist/main.js"
     }
   },
-  "repository": "https://github.com/dimensi/xhtml2pug",
+  "repository": "https://github.com/finpo/xhtml2pug",
   "author": {
     "email": "ausir@finpo.com.tw",
     "name": "FINPO"
