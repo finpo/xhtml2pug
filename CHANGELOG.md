@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://github.com/finpo/xhtml2pug/compare/v5.0.5...v5.1.0) (2025-06-18)
+
+
+### Features
+
+* 在 CICD 中加入快取 ([0413947](https://github.com/finpo/xhtml2pug/commit/0413947171050687eb5b2a5b076a3b10ccac10a7))
+
 ## [5.0.5](https://github.com/finpo/xhtml2pug/compare/v5.0.4...v5.0.5) (2025-06-18)
 
 
