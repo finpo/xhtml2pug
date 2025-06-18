@@ -1,5 +1,7 @@
 # xhtml2pug
 
+it's fork from dimensi/xhtml2pug
+
 Converts **HTML** and **Vue** like syntax to **Pug** templating language.  
 Requires Node.js version `14` or higher.
 
