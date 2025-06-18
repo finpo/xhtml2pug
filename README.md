@@ -2,6 +2,14 @@
 
 it's fork from dimensi/xhtml2pug
 
+由於自 2022 年後原專案已經無人維護
+並且有一些 Bug 問題導致使用上困難
+因此 fork 修改相關問題
+
+Since the original project has not been maintained since 2022
+and there are some bug issues that make it difficult to use
+therefore fork to fix related issues
+
 Converts **HTML** and **Vue** like syntax to **Pug** templating language.  
 Requires Node.js version `14` or higher.
 
