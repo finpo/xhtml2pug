@@ -12,7 +12,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: "@finpo/xhtml2pug"
+          repo-url: "@finpo/xhtml2pug"
       - name: Checkout
         uses: actions/checkout@v4.2.2
         # these if statements ensure that a publication only occurs when
