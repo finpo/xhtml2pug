@@ -1,31 +1,31 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`parser html: should convert angular.html to match snapshot 1`] = `
 "html
   body
-    button.btn.btn-small(ng-click=\\"login('testing', 'testing')\\") Test Login
+    button.btn.btn-small(ng-click="login('testing', 'testing')") Test Login
 "
 `;
 
 exports[`parser html: should convert angular-2.html to match snapshot 1`] = `
 "html
   body
-    nz-page-header.site-page-header((nzBack)=\\"onBack()\\", nzBackIcon, nzTitle=\\"Title\\", nzSubtitle=\\"This is a subtitle\\")
+    nz-page-header.site-page-header((nzBack)="onBack()", nzBackIcon, nzTitle="Title", nzSubtitle="This is a subtitle")
 "
 `;
 
 exports[`parser html: should convert apostrophe.html to match snapshot 1`] = `
 "html
   body
-    img(title=\\"Joe's Place\\")
-    img(title='Joe\\"s Place')
+    img(title="Joe's Place")
+    img(title='Joe"s Place')
 "
 `;
 
 exports[`parser html: should convert attr-multiline.html to match snapshot 1`] = `
 "html
   body
-    img(src=\\"img/close_button.png\\", height=\\"16\\", width=\\"16\\", alt=\\"Home\\", onclick=\`
+    img(src="img/close_button.png", height="16", width="16", alt="Home", onclick=\`
     mwl.switchClass('#search_title', 'show_title_search', 'show_title_main');
     mwl.setGroupTarget('#navigateToggle', '#home', 'show', 'hide');
     mwl.switchClass('#slider', 'show_miniapp', 'show_main');
@@ -35,7 +35,7 @@ exports[`parser html: should convert attr-multiline.html to match snapshot 1`] =
 
 exports[`parser html: should convert bodyless.html to match snapshot 1`] = `
 "div Lorem ipsum dolor sit amet.
-  input(type=\\"text\\")
+  input(type="text")
 "
 `;
 
@@ -48,7 +48,7 @@ exports[`parser html: should convert bodyless.json to match snapshot 1`] = `
 
 exports[`parser html: should convert bodyless2.html to match snapshot 1`] = `
 "head
-  meta(charset=\\"UTF-8\\")
+  meta(charset="UTF-8")
   title Title
 body
   div Lorem ipsum dolor sit amet.
@@ -65,7 +65,7 @@ exports[`parser html: should convert bodyless2.json to match snapshot 1`] = `
 exports[`parser html: should convert classes-at-end.html to match snapshot 1`] = `
 "html
   body
-    div(v-if=\\"loading\\", @click=\\"doSomething()\\", :key=\\"index\\", v-for=\\"(x, index) in myArray\\").padding-left.padding-top.margin-right.text-center.text-white.background-black
+    div(v-if="loading", @click="doSomething()", :key="index", v-for="(x, index) in myArray").padding-left.padding-top.margin-right.text-center.text-white.background-black
 "
 `;
 
@@ -99,8 +99,8 @@ exports[`parser html: should convert comment.html to match snapshot 1`] = `
   head
   body
     //
-      tr class=\\"a_b\\">
-      <input name=\\"a_b\\" type=\\"checkbox\\" value=\\"true\\"><span id=\\"a_b\\">A B</span></input>
+      tr class="a_b">
+      <input name="a_b" type="checkbox" value="true"><span id="a_b">A B</span></input>
       </tr
 "
 `;
@@ -108,8 +108,8 @@ exports[`parser html: should convert comment.html to match snapshot 1`] = `
 exports[`parser html: should convert conditional.html to match snapshot 1`] = `
 "html
   head
-    meta(http-equiv=\\"X-UA-Compatible\\", content=\\"IE=Edge,chrome=1\\")
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=us-ascii\\")
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge,chrome=1")
+    meta(http-equiv="content-type", content="text/html; charset=us-ascii")
   body
     script.
       //<![CDATA[
@@ -124,24 +124,24 @@ exports[`parser html: should convert conditional.html to match snapshot 1`] = `
 exports[`parser html: should convert conditional2.html to match snapshot 1`] = `
 "doctype html
 // paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-// [if lt IE 7]> <html class=\\"no-js lt-ie9 lt-ie8 lt-ie7\\" lang=\\"en\\"> <![endif]
-// [if IE 7]>    <html class=\\"no-js lt-ie9 lt-ie8\\" lang=\\"en\\"> <![endif]
-// [if IE 8]>    <html class=\\"no-js lt-ie9\\" lang=\\"en\\"> <![endif]
+// [if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]
+// [if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]
+// [if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]
 // [if gt IE 8]><!
-html.no-js(lang=\\"en\\")
+html.no-js(lang="en")
   // <![endif]
   head
-    meta(charset=\\"utf-8\\")
+    meta(charset="utf-8")
     // Set the viewport width to device width for mobile
-    meta(name=\\"viewport\\", content=\\"width=device-width\\")
+    meta(name="viewport", content="width=device-width")
     title Welcome to Foundation
     // Included CSS Files
-    link(rel=\\"stylesheet\\", href=\\"test/stylesheets/styles.css\\")
-    script(src=\\"vendor/assets/javascripts/foundation/modernizr.foundation.js\\")
+    link(rel="stylesheet", href="test/stylesheets/styles.css")
+    script(src="vendor/assets/javascripts/foundation/modernizr.foundation.js")
     // IE Fix for HTML5 Tags
     //
       [if lt IE 9]>
-      <script src=\\"http://html5shiv.googlecode.com/svn/trunk/html5.js\\"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]
   body
     .row
@@ -177,11 +177,11 @@ html.no-js(lang=\\"en\\")
         h3 Tabs
         dl.tabs
           dd.active
-            a(href=\\"#simple1\\") Simple Tab 1
+            a(href="#simple1") Simple Tab 1
           dd
-            a(href=\\"#simple2\\") Simple Tab 2
+            a(href="#simple2") Simple Tab 2
           dd
-            a(href=\\"#simple3\\") Simple Tab 3
+            a(href="#simple3") Simple Tab 3
         ul.tabs-content
           li#simple1Tab.active This is simple tab 1&apos;s content. Pretty neat, huh?
           li#simple2Tab This is simple tab 2&apos;s content. Now you see it!
@@ -190,18 +190,18 @@ html.no-js(lang=\\"en\\")
         .row
           .six.columns
             p
-              a.small.button(href=\\"#\\") Small Button
+              a.small.button(href="#") Small Button
             p
-              a.button(href=\\"#\\") Medium Button
+              a.button(href="#") Medium Button
             p
-              a.large.button(href=\\"#\\") Large Button
+              a.large.button(href="#") Large Button
           .six.columns
             p
-              a.small.alert.button(href=\\"#\\") Small Alert Button
+              a.small.alert.button(href="#") Small Alert Button
             p
-              a.success.button(href=\\"#\\") Medium Success Button
+              a.success.button(href="#") Medium Success Button
             p
-              a.large.secondary.button(href=\\"#\\") Large Secondary Button
+              a.large.secondary.button(href="#") Large Secondary Button
       .four.columns
         h4 Getting Started
         p We&apos;re stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
@@ -209,61 +209,61 @@ html.no-js(lang=\\"en\\")
         p Once you&apos;ve exhausted the fun in this document, you should check out:
         ul.disc
           li
-            a(href=\\"http://foundation.zurb.com/docs\\") Foundation Documentation
+            a(href="http://foundation.zurb.com/docs") Foundation Documentation
             br
             | Everything you need to know about using the framework.
           li
-            a(href=\\"http://github.com/zurb/foundation\\") Foundation on Github
+            a(href="http://github.com/zurb/foundation") Foundation on Github
             br
             | Latest code, issue reports, feature requests and more.
           li
-            a(href=\\"http://twitter.com/foundationzurb\\") @foundationzurb
+            a(href="http://twitter.com/foundationzurb") @foundationzurb
             br
             | Ping us on Twitter if you have questions. If you build something with this we&apos;d love to see it (and send you a totally boss sticker).
     // Included JS Files
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.reveal.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.orbit.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.forms.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.placeholder.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.tooltips.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.alerts.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.buttons.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.accordion.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.navigation.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.mediaQueryToggle.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/jquery.foundation.tabs.js\\")
-    script(src=\\"vendor/assets/javascripts/foundation/app.js\\")
+    script(src="vendor/assets/javascripts/foundation/jquery.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.reveal.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.orbit.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.forms.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.placeholder.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.tooltips.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.alerts.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.buttons.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.accordion.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.navigation.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.mediaQueryToggle.js")
+    script(src="vendor/assets/javascripts/foundation/jquery.foundation.tabs.js")
+    script(src="vendor/assets/javascripts/foundation/app.js")
 "
 `;
 
 exports[`parser html: should convert conditional3.html to match snapshot 1`] = `
 "doctype html
-// [if lt IE 7]>      <html class=\\"no-js lt-ie9 lt-ie8 lt-ie7\\"> <![endif]
-// [if IE 7]>         <html class=\\"no-js lt-ie9 lt-ie8\\"> <![endif]
-// [if IE 8]>         <html class=\\"no-js lt-ie9\\"> <![endif]
+// [if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]
+// [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
+// [if IE 8]>         <html class="no-js lt-ie9"> <![endif]
 // [if gt IE 8]><!
 html.no-js
   // <![endif]
   head
-    meta(charset=\\"utf-8\\")
-    meta(http-equiv=\\"X-UA-Compatible\\", content=\\"IE=edge,chrome=1\\")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     title
-    meta(name=\\"description\\", content=\\"\\")
-    meta(name=\\"viewport\\", content=\\"width=device-width\\")
-    link(rel=\\"stylesheet\\", href=\\"css/bootstrap.min.css\\")
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width")
+    link(rel="stylesheet", href="css/bootstrap.min.css")
     style.
       body {
       padding-top: 50px;
       padding-bottom: 20px;
       }
-    link(rel=\\"stylesheet\\", href=\\"css/bootstrap-theme.min.css\\")
-    link(rel=\\"stylesheet\\", href=\\"css/main.css\\")
-    script(src=\\"js/vendor/modernizr-2.6.2-respond-1.1.0.min.js\\")
+    link(rel="stylesheet", href="css/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="css/main.css")
+    script(src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js")
   body
     //
       [if lt IE 7]>
-      <p class=\\"chromeframe\\">You are using an <strong>outdated</strong> browser. Please <a href=\\"http://browsehappy.com/\\">upgrade your browser</a> or <a href=\\"http://www.google.com/chromeframe/?redirect=true\\">activate Google Chrome Frame</a> to improve your experience.</p>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
       <![endif]
     .navbar.navbar-inverse.navbar-fixed-top
 "
@@ -271,10 +271,10 @@ html.no-js
 
 exports[`parser html: should convert default-html.html to match snapshot 1`] = `
 "doctype html
-html(lang=\\"en\\")
+html(lang="en")
   head
     title Pug
-    script(type=\\"text/javascript\\").
+    script(type="text/javascript").
       foo = true;
       bar = function () {};
       if (foo) {
@@ -282,7 +282,7 @@ html(lang=\\"en\\")
       }
   body
     h1 Pug - node template engine
-    #container.col(data-element=\\"1\\", data-element-1=\\"2\\")
+    #container.col(data-element="1", data-element-1="2")
       p You are amazing
       p
         | Pug is a terse and simple
@@ -295,7 +295,7 @@ html(lang=\\"en\\")
 exports[`parser html: should convert empty-class.html to match snapshot 1`] = `
 "html
   head
-  body(class=\\"\\")
+  body(class="")
     code
       | blah
       | blah
@@ -306,7 +306,7 @@ exports[`parser html: should convert entity.html to match snapshot 1`] = `
 "html
   body
     p Note the lack of the 
-      code &lt;meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\"&gt;
+      code &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
     p &copy; Company 2013
 "
@@ -316,7 +316,7 @@ exports[`parser html: should convert entity.json to match snapshot 1`] = `
 "html
   body
     | {
-    | \\"encode\\": false
+    | "encode": false
     | }
 "
 `;
@@ -324,40 +324,40 @@ exports[`parser html: should convert entity.json to match snapshot 1`] = `
 exports[`parser html: should convert headless.html to match snapshot 1`] = `
 "html
   head
-    script(type=\\"text/javascript\\").
-      window.location = \\"/newsite/\\";
+    script(type="text/javascript").
+      window.location = "/newsite/";
 "
 `;
 
 exports[`parser html: should convert html5boilerplate.html to match snapshot 1`] = `
 "doctype html
-// [if lt IE 7]> <html class=\\"no-js ie6 oldie\\" lang=\\"en\\"> <![endif]
-// [if IE 7]>    <html class=\\"no-js ie7 oldie\\" lang=\\"en\\"> <![endif]
-// [if IE 8]>    <html class=\\"no-js ie8 oldie\\" lang=\\"en\\"> <![endif]
+// [if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]
+// [if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]
+// [if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]
 // [if gt IE 8]><!
-html.no-js(lang=\\"en\\")
+html.no-js(lang="en")
   // <![endif]
   head
-    meta(charset=\\"utf-8\\")
-    meta(http-equiv=\\"X-UA-Compatible\\", content=\\"IE=edge,chrome=1\\")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     title
-    meta(name=\\"description\\", content=\\"\\")
-    meta(name=\\"author\\", content=\\"\\")
-    meta(name=\\"viewport\\", content=\\"width=device-width,initial-scale=1\\")
-    link(rel=\\"stylesheet\\", href=\\"css/style.css\\")
-    script(src=\\"js/libs/modernizr-2.0.6.min.js\\")
+    meta(name="description", content="")
+    meta(name="author", content="")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    link(rel="stylesheet", href="css/style.css")
+    script(src="js/libs/modernizr-2.0.6.min.js")
   body
     #container
       header
-      #main(role=\\"main\\")
+      #main(role="main")
       footer
     // ! end of #container
-    script(src=\\"//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js\\")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
     script.
-      window.jQuery || document.write('<script src=\\"js/libs/jquery-1.6.2.min.js\\"><\\\\/script>')
+      window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\\/script>')
     // scripts concatenated and minified via ant build script
-    script(src=\\"js/plugins.js\\")
-    script(src=\\"js/script.js\\")
+    script(src="js/plugins.js")
+    script(src="js/script.js")
     // end scripts
     script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
@@ -366,8 +366,8 @@ html.no-js(lang=\\"en\\")
       s.parentNode.insertBefore(g,s)}(document,'script'));
     //
       [if lt IE 7 ]>
-      <script src=\\"//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js\\"></script>
-      <script>window.attachEvent(\\"onload\\",function(){CFInstall.check({mode:\\"overlay\\"})})</script>
+      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
       <![endif]
 "
 `;
@@ -376,8 +376,8 @@ exports[`parser html: should convert keep-empty-quote.html to match snapshot 1`]
 "html
   body
     div
-      a(href=\\"\\") empty link
-      input(type=\\"checkbox\\", checked)
+      a(href="") empty link
+      input(type="checkbox", checked)
       | checked box
 "
 `;
@@ -393,9 +393,9 @@ exports[`parser html: should convert mustache.html to match snapshot 1`] = `
 "html
   body
     #mustacheTestcases
-      #div1(class=\\"panel-body {{listTypeClass}}\\") Test
-      div(class=\\"note checklist-part indent-{{indent}}\\")
-      textarea.note-text(id=\\"{{id}}\\") {{text}}
+      #div1(class="panel-body {{listTypeClass}}") Test
+      div(class="note checklist-part indent-{{indent}}")
+      textarea.note-text(id="{{id}}") {{text}}
 "
 `;
 
@@ -409,8 +409,8 @@ exports[`parser html: should convert only-body.html to match snapshot 1`] = `
 exports[`parser html: should convert only-head.html to match snapshot 1`] = `
 "html
   head
-    script(type=\\"text/javascript\\").
-      window.location = \\"/newsite/\\";
+    script(type="text/javascript").
+      window.location = "/newsite/";
 "
 `;
 
@@ -436,9 +436,9 @@ exports[`parser html: should convert pre1.html to match snapshot 1`] = `
 "doctype html
 html
   head
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=ISO-8859-1\\")
+    meta(http-equiv="content-type", content="text/html; charset=ISO-8859-1")
     title html2jade.js
-    link(rel=\\"stylesheet\\", type=\\"text/css\\", href=\\"highlight.css\\")
+    link(rel="stylesheet", type="text/css", href="highlight.css")
   body.hl
     pre.hl
       span.hl.slc // Generated by CoffeeScript 1.3.3
@@ -766,7 +766,7 @@ html
       span.hl.opt ).
       span.hl.kwd split
       span.hl.opt (/
-      | \\\\s
+      | \\s
       span.hl.opt +/).
       span.hl.kwd filter
       span.hl.opt (
@@ -922,7 +922,7 @@ html
       | nodeName
       span.hl.opt +
       span.hl.str &apos;=
-      span.hl.esc \\\\&apos;
+      span.hl.esc \\&apos;
       span.hl.str &apos;
       span.hl.opt +
       | attr
@@ -932,9 +932,9 @@ html
       span.hl.kwd replace
       span.hl.opt (/
       span.hl.str &apos;/g, &apos;
-      span.hl.esc \\\\\\\\\\\\&apos;
+      span.hl.esc \\\\\\&apos;
       span.hl.str &apos;) + &apos;
-      span.hl.esc \\\\&apos;
+      span.hl.esc \\&apos;
       span.hl.str &apos;);
       span.hl.str             }
       span.hl.str           }
@@ -961,9 +961,9 @@ html
       span.hl.str       } else {
       span.hl.str         data = node.firstChild.data;
       span.hl.str         if (data.length &amp;gt; this.wrapLength || data.match(/
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       span.hl.str |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str /)) {
       span.hl.str           return null;
       span.hl.str         } else {
@@ -1026,9 +1026,9 @@ html
       span.hl.str &apos;;
       span.hl.str         if (data.length &amp;gt; 0) {
       span.hl.str           lines = data.split(/
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       span.hl.str |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str /);
       span.hl.str           return lines.forEach(function(line) {
       span.hl.str             return _this.writeTextLine(line, output, pipe, trim, wrap, escapeBackslash);
@@ -1063,9 +1063,9 @@ html
       span.hl.str       if (line &amp;amp;&amp;amp; line.length &amp;gt; 0) {
       span.hl.str         if (escapeBackslash) {
       span.hl.str           line = line.replace(&amp;quot;
-      span.hl.esc \\\\\\\\
+      span.hl.esc \\\\
       span.hl.str &amp;quot;, &amp;quot;
-      span.hl.esc \\\\\\\\\\\\\\\\
+      span.hl.esc \\\\\\\\
       span.hl.str &amp;quot;);
       span.hl.str         }
       span.hl.str         if (!wrap || line.length &amp;lt;= this.wrapLength) {
@@ -1088,11 +1088,11 @@ html
       span.hl.str       if (!line || line.length === 0) {
       span.hl.str         return [];
       span.hl.str       }
-      span.hl.str       if (line.search(/\\\\s+/ === -1)) {
+      span.hl.str       if (line.search(/\\s+/ === -1)) {
       span.hl.str         return [line];
       span.hl.str       }
       span.hl.str       lines = [];
-      span.hl.str       words = line.split(/\\\\s+/);
+      span.hl.str       words = line.split(/\\s+/);
       span.hl.str       line = &apos;
       span.hl.str &apos;;
       span.hl.str       while (words.length) {
@@ -1304,11 +1304,11 @@ html
       span.hl.opt .
       span.hl.kwd search
       span.hl.opt (/
-      span.hl.esc \\\\r\\\\n
+      span.hl.esc \\r\\n
       | |
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       | |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.opt /) ===
       span.hl.num 0
       span.hl.opt ) {
@@ -1318,11 +1318,11 @@ html
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
-      span.hl.esc \\\\r\\\\n
+      span.hl.esc \\r\\n
       | |
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       | |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.opt /,
       span.hl.str &apos;&apos;
       span.hl.opt );
@@ -1330,7 +1330,7 @@ html
       | data
       span.hl.opt =
       span.hl.str &apos;
-      span.hl.esc \\\\\\\\
+      span.hl.esc \\\\
       span.hl.str n&apos;
       span.hl.opt +
       | data
@@ -1346,12 +1346,12 @@ html
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
-      span.hl.esc \\\\t
+      span.hl.esc \\t
       span.hl.opt /
       | g
       span.hl.opt ,
       span.hl.str &apos;
-      span.hl.esc \\\\\\\\
+      span.hl.esc \\\\
       span.hl.str t&apos;
       span.hl.opt );
       | data
@@ -1360,16 +1360,16 @@ html
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
-      span.hl.esc \\\\r\\\\n
+      span.hl.esc \\r\\n
       | |
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       | |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.opt /
       | g
       span.hl.opt ,
       span.hl.str &apos;
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt +
       | output
@@ -1419,7 +1419,7 @@ html
       | tagText
       span.hl.opt =
       span.hl.str &apos;
-      span.hl.esc \\\\\\\\
+      span.hl.esc \\\\
       span.hl.str &apos;
       span.hl.opt +
       | tagText
@@ -1676,16 +1676,16 @@ html
       span.hl.opt .
       span.hl.kwd match
       span.hl.opt (/
-      | \\\\s
+      | \\s
       span.hl.opt *
-      | \\\\
+      | \\
       span.hl.opt [(
       span.hl.kwa if
-      | \\\\s
+      | \\s
       span.hl.opt +[
-      | ^\\\\
+      | ^\\
       span.hl.opt ]]+)
-      | \\\\
+      | \\
       span.hl.opt ]/);
       span.hl.kwa if
       span.hl.opt (!
@@ -1709,9 +1709,9 @@ html
       span.hl.opt .
       span.hl.kwd search
       span.hl.opt (/
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       | |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.opt /) === -
       span.hl.num 1
       span.hl.opt ) {
@@ -1745,9 +1745,9 @@ html
       span.hl.opt .
       span.hl.kwd split
       span.hl.opt (/
-      span.hl.esc \\\\r
+      span.hl.esc \\r
       | |
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.opt /);
       | lines
       span.hl.opt .
@@ -1826,18 +1826,18 @@ html
       span.hl.opt ().
       span.hl.kwd replace
       span.hl.opt (/
-      | \\\\s
+      | \\s
       span.hl.opt *
-      | \\\\
+      | \\
       span.hl.opt [
       span.hl.kwa if
-      | \\\\s
+      | \\s
       span.hl.opt +[
-      | ^\\\\
+      | ^\\
       span.hl.opt ]]+
-      | \\\\
+      | \\
       span.hl.opt ]&amp;gt;
-      | \\\\s*/
+      | \\s*/
       span.hl.opt ,
       span.hl.str &apos;&apos;
       span.hl.opt ).
@@ -2317,7 +2317,7 @@ html
       | data
       span.hl.opt +
       span.hl.str &apos;
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt );
       span.hl.opt }
@@ -2332,7 +2332,7 @@ html
       | data
       span.hl.opt +
       span.hl.str &apos;
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt );
       span.hl.opt }
@@ -2522,7 +2522,7 @@ html
       | data
       span.hl.opt +
       span.hl.str &apos;
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt );
       span.hl.opt }
@@ -2537,7 +2537,7 @@ html
       | data
       span.hl.opt +
       span.hl.str &apos;
-      span.hl.esc \\\\n
+      span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt );
       span.hl.opt }
@@ -2979,9 +2979,9 @@ exports[`parser html: should convert pre2.html to match snapshot 1`] = `
 "doctype html
 html
   head
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=ISO-8859-1\\")
+    meta(http-equiv="content-type", content="text/html; charset=ISO-8859-1")
     title html2jade.js
-    link(rel=\\"stylesheet\\", type=\\"text/css\\", href=\\"highlight.css\\")
+    link(rel="stylesheet", type="text/css", href="highlight.css")
   body.hl
     pre.hl
       span.hl.slc // Generated by CoffeeScript 1.3.3
@@ -3016,9 +3016,9 @@ exports[`parser html: should convert pre3.html to match snapshot 1`] = `
 "doctype html
 html
   head
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=ISO-8859-1\\")
+    meta(http-equiv="content-type", content="text/html; charset=ISO-8859-1")
     title html2jade.js
-    link(rel=\\"stylesheet\\", type=\\"text/css\\", href=\\"highlight.css\\")
+    link(rel="stylesheet", type="text/css", href="highlight.css")
   body.hl
     pre.hl
       span.hl.slc
@@ -3070,9 +3070,9 @@ exports[`parser html: should convert test.html to match snapshot 1`] = `
 "doctype html
 html
   head
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=ISO-8859-1\\")
+    meta(http-equiv="content-type", content="text/html; charset=ISO-8859-1")
     title html2jade.js
-    link(rel=\\"stylesheet\\", type=\\"text/css\\", href=\\"highlight.css\\")
+    link(rel="stylesheet", type="text/css", href="highlight.css")
   body.hl
     pre.hl
       span.hl.slc // Generated by CoffeeScript 1.3.3
@@ -3115,7 +3115,7 @@ exports[`parser html: should convert whitespace.html to match snapshot 1`] = `
 "html
   body
     p Here is a 
-      a(href=\\"#\\") link
+      a(href="#") link
       | with whitespaces around it
 "
 `;
@@ -3124,7 +3124,7 @@ exports[`parser html: should convert whitespace2.html to match snapshot 1`] = `
 "html
   body
     p Hey there, 
-      a(href=\\"#\\") html2jade
+      a(href="#") html2jade
       strong is awesome
 "
 `;
@@ -3132,7 +3132,7 @@ exports[`parser html: should convert whitespace2.html to match snapshot 1`] = `
 exports[`parser html: should convert without-comma.html to match snapshot 1`] = `
 "html
   body
-    input(type=\\"text\\" value=\\"test\\")
+    input(type="text" value="test")
 "
 `;
 
@@ -3148,7 +3148,7 @@ exports[`parser html: should convert without-comma.json to match snapshot 1`] = 
 exports[`parser html: should convert without-html.html to match snapshot 1`] = `
 "html
   head
-    meta(charset=\\"UTF-8\\")
+    meta(charset="UTF-8")
     title Title
   body
     div Lorem ipsum dolor sit amet.
@@ -3158,29 +3158,29 @@ exports[`parser html: should convert without-html.html to match snapshot 1`] = `
 exports[`parser vue: should convert angular.html to match snapshot 1`] = `
 "html
   body
-    button.btn.btn-small(ng-click=\\"login('testing', 'testing')\\") Test Login
+    button.btn.btn-small(ng-click="login('testing', 'testing')") Test Login
 "
 `;
 
 exports[`parser vue: should convert angular-2.html to match snapshot 1`] = `
 "html
   body
-    nz-page-header.site-page-header((nzBack)=\\"onBack()\\", nzBackIcon, nzTitle=\\"Title\\", nzSubtitle=\\"This is a subtitle\\")
+    nz-page-header.site-page-header((nzBack)="onBack()", nzBackIcon, nzTitle="Title", nzSubtitle="This is a subtitle")
 "
 `;
 
 exports[`parser vue: should convert apostrophe.html to match snapshot 1`] = `
 "html
   body
-    img(title=\\"Joe's Place\\")
-    img(title='Joe\\"s Place')
+    img(title="Joe's Place")
+    img(title='Joe"s Place')
 "
 `;
 
 exports[`parser vue: should convert attr-multiline.html to match snapshot 1`] = `
 "html
   body
-    img(src=\\"img/close_button.png\\", height=\\"16\\", width=\\"16\\", alt=\\"Home\\", onclick=\`
+    img(src="img/close_button.png", height="16", width="16", alt="Home", onclick=\`
     mwl.switchClass('#search_title', 'show_title_search', 'show_title_main');
     mwl.setGroupTarget('#navigateToggle', '#home', 'show', 'hide');
     mwl.switchClass('#slider', 'show_miniapp', 'show_main');
@@ -3191,17 +3191,17 @@ exports[`parser vue: should convert attr-multiline.html to match snapshot 1`] = 
 exports[`parser vue: should convert attr-multiline2.html to match snapshot 1`] = `
 "html
   body
-    q-checkbox(v-if=\\"who == 3\\", label=\\"Framework agreement\\", :value=\\"terms.attributes.frameworkAgreement\\", @input=\`
+    q-checkbox(v-if="who == 3", label="Framework agreement", :value="terms.attributes.frameworkAgreement", @input=\`
       (val) => {
         $set(terms.attributes, 'frameworkAgreement', val)
       }
-    \`, :disable=\\"readonly\\")
+    \`, :disable="readonly")
 "
 `;
 
 exports[`parser vue: should convert bodyless.html to match snapshot 1`] = `
 "div Lorem ipsum dolor sit amet.
-  input(type=\\"text\\")
+  input(type="text")
 "
 `;
 
@@ -3212,7 +3212,7 @@ exports[`parser vue: should convert bodyless.json to match snapshot 1`] = `
 
 exports[`parser vue: should convert bodyless2.html to match snapshot 1`] = `
 "head
-  meta(charset=\\"UTF-8\\")
+  meta(charset="UTF-8")
   title Title
 body
   div Lorem ipsum dolor sit amet.
@@ -3227,7 +3227,7 @@ exports[`parser vue: should convert bodyless2.json to match snapshot 1`] = `
 exports[`parser vue: should convert classes-at-end.html to match snapshot 1`] = `
 "html
   body
-    div(v-if=\\"loading\\", @click=\\"doSomething()\\", :key=\\"index\\", v-for=\\"(x, index) in myArray\\").padding-left.padding-top.margin-right.text-center.text-white.background-black
+    div(v-if="loading", @click="doSomething()", :key="index", v-for="(x, index) in myArray").padding-left.padding-top.margin-right.text-center.text-white.background-black
 "
 `;
 
@@ -3256,8 +3256,8 @@ exports[`parser vue: should convert comment.html to match snapshot 1`] = `
   head
   body
     //
-      tr class=\\"a_b\\">
-      <input name=\\"a_b\\" type=\\"checkbox\\" value=\\"true\\"><span id=\\"a_b\\">A B</span></input>
+      tr class="a_b">
+      <input name="a_b" type="checkbox" value="true"><span id="a_b">A B</span></input>
       </tr
 "
 `;
@@ -3265,8 +3265,8 @@ exports[`parser vue: should convert comment.html to match snapshot 1`] = `
 exports[`parser vue: should convert conditional.html to match snapshot 1`] = `
 "html
   head
-    meta(http-equiv=\\"X-UA-Compatible\\", content=\\"IE=Edge,chrome=1\\")
-    meta(http-equiv=\\"content-type\\", content=\\"text/html; charset=us-ascii\\")
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge,chrome=1")
+    meta(http-equiv="content-type", content="text/html; charset=us-ascii")
   body
     script.
       //<![CDATA[
@@ -3278,7 +3278,7 @@ exports[`parser vue: should convert conditional.html to match snapshot 1`] = `
 exports[`parser vue: should convert empty-class.html to match snapshot 1`] = `
 "html
   head
-  body(class=\\"\\")
+  body(class="")
     code blah blah
 "
 `;
@@ -3287,7 +3287,7 @@ exports[`parser vue: should convert entity.html to match snapshot 1`] = `
 "html
   body
     p Note the lack of the
-      code <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
+      code <meta name="viewport" content="width=device-width, initial-scale=1.0">
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
     p © Company 2013
 "
@@ -3295,15 +3295,15 @@ exports[`parser vue: should convert entity.html to match snapshot 1`] = `
 
 exports[`parser vue: should convert entity.json to match snapshot 1`] = `
 "html
-  body { \\"encode\\": false }
+  body { "encode": false }
 "
 `;
 
 exports[`parser vue: should convert headless.html to match snapshot 1`] = `
 "html
   head
-    script(type=\\"text/javascript\\").
-      window.location = \\"/newsite/\\";
+    script(type="text/javascript").
+      window.location = "/newsite/";
 "
 `;
 
@@ -3311,8 +3311,8 @@ exports[`parser vue: should convert keep-empty-quote.html to match snapshot 1`] 
 "html
   body
     div
-      a(href=\\"\\") empty link
-      input(type=\\"checkbox\\", checked)
+      a(href="") empty link
+      input(type="checkbox", checked)
       | checked box
 "
 `;
@@ -3328,9 +3328,9 @@ exports[`parser vue: should convert mustache.html to match snapshot 1`] = `
 "html
   body
     #mustacheTestcases
-      #div1(class=\\"panel-body {{listTypeClass}}\\") Test
-      div(class=\\"note checklist-part indent-{{indent}}\\")
-      textarea.note-text(id=\\"{{id}}\\") {{text}}
+      #div1(class="panel-body {{listTypeClass}}") Test
+      div(class="note checklist-part indent-{{indent}}")
+      textarea.note-text(id="{{id}}") {{text}}
 "
 `;
 
@@ -3344,8 +3344,8 @@ exports[`parser vue: should convert only-body.html to match snapshot 1`] = `
 exports[`parser vue: should convert only-head.html to match snapshot 1`] = `
 "html
   head
-    script(type=\\"text/javascript\\").
-      window.location = \\"/newsite/\\";
+    script(type="text/javascript").
+      window.location = "/newsite/";
 "
 `;
 
@@ -3390,12 +3390,12 @@ exports[`parser vue: should convert textarea-javascript.html to match snapshot 1
 exports[`parser vue: should convert vue.html to match snapshot 1`] = `
 "html
   body
-    QBtn(icon=\\"event\\", round, color=\\"primary\\")
-      q-popup-proxy(@before-show=\\"updateProxy\\", cover, transition-show=\\"scale\\", transition-hide=\\"scale\\")
-        q-date(v-model=\\"proxyDate\\")
+    QBtn(icon="event", round, color="primary")
+      q-popup-proxy(@before-show="updateProxy", cover, transition-show="scale", transition-hide="scale")
+        q-date(v-model="proxyDate")
           .row.items-center.justify-end.q-gutter-sm
-            q-btn(label=\\"Cancel\\", color=\\"primary\\", flat, v-close-popup)
-            q-btn(label=\\"OK\\", color=\\"primary\\", flat, @click=\\"save\\", v-close-popup)
+            q-btn(label="Cancel", color="primary", flat, v-close-popup)
+            q-btn(label="OK", color="primary", flat, @click="save", v-close-popup)
     script.
       const a = document.querySelector('b');
     style.
@@ -3409,7 +3409,7 @@ exports[`parser vue: should convert whitespace.html to match snapshot 1`] = `
 "html
   body
     p Here is a
-      a(href=\\"#\\") link
+      a(href="#") link
       | with whitespaces around it
 "
 `;
@@ -3418,7 +3418,7 @@ exports[`parser vue: should convert whitespace2.html to match snapshot 1`] = `
 "html
   body
     p Hey there,
-      a(href=\\"#\\") html2jade
+      a(href="#") html2jade
 
       strong is awesome
 "
@@ -3427,7 +3427,7 @@ exports[`parser vue: should convert whitespace2.html to match snapshot 1`] = `
 exports[`parser vue: should convert without-comma.html to match snapshot 1`] = `
 "html
   body
-    input(type=\\"text\\" value=\\"test\\")
+    input(type="text" value="test")
 "
 `;
 
@@ -3440,7 +3440,7 @@ exports[`parser vue: should convert without-comma.json to match snapshot 1`] = `
 exports[`parser vue: should convert without-html.html to match snapshot 1`] = `
 "html
   head
-    meta(charset=\\"UTF-8\\")
+    meta(charset="UTF-8")
     title Title
   body
     div Lorem ipsum dolor sit amet.
