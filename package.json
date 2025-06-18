@@ -1,6 +1,6 @@
 {
   "name": "@finpo/xhtml2pug",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "library for convert html2pug",
   "files": [
     "dist",

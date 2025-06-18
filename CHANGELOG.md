@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.1](https://github.com/finpo/xhtml2pug/compare/v5.0.0...v5.0.1) (2025-06-18)
+
+
+### Bug Fixes
+
+* release-please ([8b0137d](https://github.com/finpo/xhtml2pug/commit/8b0137dda65efd74df36ddb719ff9d16e89dc9dc))
+* release-please ([327f961](https://github.com/finpo/xhtml2pug/commit/327f9617bbb8da4ad4f67e8e90da0088f1c3cba9))
+
 ## [5.0.0](https://github.com/finpo/xhtml2pug/compare/v4.0.2...v5.0.0) (2025-06-18)
 
 
