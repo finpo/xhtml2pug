@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.2](https://github.com/finpo/xhtml2pug/compare/v5.1.1...v5.1.2) (2025-06-18)
+
+
+### Bug Fixes
+
+* pnpm should before setup-node ([fbd2cd5](https://github.com/finpo/xhtml2pug/commit/fbd2cd5b3573669889e541a83039fe7ba22134a6))
+
 ## [5.1.1](https://github.com/finpo/xhtml2pug/compare/v5.1.0...v5.1.1) (2025-06-18)
 
 
