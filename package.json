@@ -1,5 +1,5 @@
 {
-  "name": "xhtml2pug",
+  "name": "@finpo/xhtml2pug",
   "version": "4.0.2",
   "description": "library for convert html2pug",
   "files": [
@@ -21,8 +21,8 @@
   },
   "repository": "https://github.com/dimensi/xhtml2pug",
   "author": {
-    "email": "eddimensi@gmail.com",
-    "name": "Nikita Nafranets"
+    "email": "ausir@finpo.com.tw",
+    "name": "FINPO"
   },
   "license": "MIT",
   "keywords": [
