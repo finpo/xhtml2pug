@@ -39,13 +39,6 @@ exports[`parser html: should convert bodyless.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser html: should convert bodyless.json to match snapshot 1`] = `
-"| {
-| &quot;bodyLess&quot;: true
-| }
-"
-`;
-
 exports[`parser html: should convert bodyless2.html to match snapshot 1`] = `
 "head
   meta(charset="UTF-8")
@@ -55,26 +48,10 @@ body
 "
 `;
 
-exports[`parser html: should convert bodyless2.json to match snapshot 1`] = `
-"| {
-| &quot;bodyLess&quot;: true
-| }
-"
-`;
-
 exports[`parser html: should convert classes-at-end.html to match snapshot 1`] = `
 "html
   body
     div(v-if="loading", @click="doSomething()", :key="index", v-for="(x, index) in myArray").padding-left.padding-top.margin-right.text-center.text-white.background-black
-"
-`;
-
-exports[`parser html: should convert classes-at-end.json to match snapshot 1`] = `
-"html
-  body
-    | {
-    | &quot;classesAtEnd&quot;: true
-    | }
 "
 `;
 
@@ -121,7 +98,7 @@ exports[`parser html: should convert conditional.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser html: should convert conditional2.html to match snapshot 1`] = `
+exports[`parser html: should convert conditional2.html.html to match snapshot 1`] = `
 "doctype html
 // paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 // [if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]
@@ -237,7 +214,7 @@ html.no-js(lang="en")
 "
 `;
 
-exports[`parser html: should convert conditional3.html to match snapshot 1`] = `
+exports[`parser html: should convert conditional3.html.html to match snapshot 1`] = `
 "doctype html
 // [if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]
 // [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
@@ -269,7 +246,7 @@ html.no-js
 "
 `;
 
-exports[`parser html: should convert default-html.html to match snapshot 1`] = `
+exports[`parser html: should convert default-html.html.html to match snapshot 1`] = `
 "doctype html
 html(lang="en")
   head
@@ -312,15 +289,6 @@ exports[`parser html: should convert entity.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser html: should convert entity.json to match snapshot 1`] = `
-"html
-  body
-    | {
-    | "encode": false
-    | }
-"
-`;
-
 exports[`parser html: should convert headless.html to match snapshot 1`] = `
 "html
   head
@@ -329,7 +297,7 @@ exports[`parser html: should convert headless.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser html: should convert html5boilerplate.html to match snapshot 1`] = `
+exports[`parser html: should convert html5boilerplate.html.html to match snapshot 1`] = `
 "doctype html
 // [if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]
 // [if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]
@@ -432,7 +400,7 @@ exports[`parser html: should convert pfft.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser html: should convert pre1.html to match snapshot 1`] = `
+exports[`parser html: should convert pre1.html.html to match snapshot 1`] = `
 "doctype html
 html
   head
@@ -2975,7 +2943,7 @@ html
 "
 `;
 
-exports[`parser html: should convert pre2.html to match snapshot 1`] = `
+exports[`parser html: should convert pre2.html.html to match snapshot 1`] = `
 "doctype html
 html
   head
@@ -3012,7 +2980,7 @@ html
 "
 `;
 
-exports[`parser html: should convert pre3.html to match snapshot 1`] = `
+exports[`parser html: should convert pre3.html.html to match snapshot 1`] = `
 "doctype html
 html
   head
@@ -3057,16 +3025,7 @@ exports[`parser html: should convert single-quotes.html to match snapshot 1`] = 
 "
 `;
 
-exports[`parser html: should convert single-quotes.json to match snapshot 1`] = `
-"html
-  body
-    | {
-    | &quot;doubleQuotes&quot;: false
-    | }
-"
-`;
-
-exports[`parser html: should convert test.html to match snapshot 1`] = `
+exports[`parser html: should convert test.html.html to match snapshot 1`] = `
 "doctype html
 html
   head
@@ -3136,15 +3095,6 @@ exports[`parser html: should convert without-comma.html to match snapshot 1`] = 
 "
 `;
 
-exports[`parser html: should convert without-comma.json to match snapshot 1`] = `
-"html
-  body
-    | {
-    | &quot;attrComma&quot;: false
-    | }
-"
-`;
-
 exports[`parser html: should convert without-html.html to match snapshot 1`] = `
 "html
   head
@@ -3188,7 +3138,7 @@ exports[`parser vue: should convert attr-multiline.html to match snapshot 1`] = 
 "
 `;
 
-exports[`parser vue: should convert attr-multiline2.html to match snapshot 1`] = `
+exports[`parser vue: should convert attr-multiline2.vue.html to match snapshot 1`] = `
 "html
   body
     q-checkbox(v-if="who == 3", label="Framework agreement", :value="terms.attributes.frameworkAgreement", @input=\`
@@ -3205,11 +3155,6 @@ exports[`parser vue: should convert bodyless.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser vue: should convert bodyless.json to match snapshot 1`] = `
-"| { &quot;bodyLess&quot;: true }
-"
-`;
-
 exports[`parser vue: should convert bodyless2.html to match snapshot 1`] = `
 "head
   meta(charset="UTF-8")
@@ -3219,21 +3164,10 @@ body
 "
 `;
 
-exports[`parser vue: should convert bodyless2.json to match snapshot 1`] = `
-"| { &quot;bodyLess&quot;: true }
-"
-`;
-
 exports[`parser vue: should convert classes-at-end.html to match snapshot 1`] = `
 "html
   body
     div(v-if="loading", @click="doSomething()", :key="index", v-for="(x, index) in myArray").padding-left.padding-top.margin-right.text-center.text-white.background-black
-"
-`;
-
-exports[`parser vue: should convert classes-at-end.json to match snapshot 1`] = `
-"html
-  body { &quot;classesAtEnd&quot;: true }
 "
 `;
 
@@ -3290,12 +3224,6 @@ exports[`parser vue: should convert entity.html to match snapshot 1`] = `
       code <meta name="viewport" content="width=device-width, initial-scale=1.0">
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
     p © Company 2013
-"
-`;
-
-exports[`parser vue: should convert entity.json to match snapshot 1`] = `
-"html
-  body { "encode": false }
 "
 `;
 
@@ -3374,12 +3302,6 @@ exports[`parser vue: should convert single-quotes.html to match snapshot 1`] = `
 "
 `;
 
-exports[`parser vue: should convert single-quotes.json to match snapshot 1`] = `
-"html
-  body { &quot;doubleQuotes&quot;: false }
-"
-`;
-
 exports[`parser vue: should convert textarea-javascript.html to match snapshot 1`] = `
 "html
   body
@@ -3387,7 +3309,7 @@ exports[`parser vue: should convert textarea-javascript.html to match snapshot 1
 "
 `;
 
-exports[`parser vue: should convert vue.html to match snapshot 1`] = `
+exports[`parser vue: should convert vue.vue.html to match snapshot 1`] = `
 "html
   body
     QBtn(icon="event", round, color="primary")
@@ -3428,12 +3350,6 @@ exports[`parser vue: should convert without-comma.html to match snapshot 1`] = `
 "html
   body
     input(type="text" value="test")
-"
-`;
-
-exports[`parser vue: should convert without-comma.json to match snapshot 1`] = `
-"html
-  body { &quot;attrComma&quot;: false }
 "
 `;
 
