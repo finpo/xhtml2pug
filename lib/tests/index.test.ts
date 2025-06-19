@@ -14,6 +14,10 @@ const htmlOnly = [
   "pre3.html",
   "test.html",
 ];
+const testCheckList = {
+  html: vueOnly,
+  vue: htmlOnly,
+};
 
 function generateTests(parser: "html" | "vue") {
   const dir = path.resolve(__dirname, "../../data");
@@ -21,12 +25,10 @@ function generateTests(parser: "html" | "vue") {
   const inputFiles = fs.readdirSync(dir);
 
   return inputFiles
-    .filter((file) =>
-      file.includes(".html") && parser === "html"
-        ? !vueOnly.find((name) => file.includes(name))
-        : !htmlOnly.find((name) => file.includes(name)),
+    .filter((file) => file.includes(".html"))
+    .filter(
+      (file) => !testCheckList[parser].find((name) => file.includes(name)),
     )
-    .filter((file) => !file.includes(".json"))
     .map((inputFile) => {
       const htmlPath = path.join(dir, inputFile);
       const html = fs.readFileSync(htmlPath, "utf-8");
