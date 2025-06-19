@@ -24,8 +24,9 @@ function generateTests(parser: "html" | "vue") {
     .filter((file) =>
       file.includes(".html") && parser === "html"
         ? !vueOnly.find((name) => file.includes(name))
-        : !htmlOnly.find((name) => file.includes(name))
+        : !htmlOnly.find((name) => file.includes(name)),
     )
+    .filter((file) => !file.includes(".json"))
     .map((inputFile) => {
       const htmlPath = path.join(dir, inputFile);
       const html = fs.readFileSync(htmlPath, "utf-8");
@@ -48,5 +49,6 @@ const htmlTests = generateTests("html");
 const vueTests = generateTests("vue");
 
 test.each([...htmlTests, ...vueTests])("%s", (_, html, options) => {
+  // console.log("options:", options);
   expect(convert(html, options)).toMatchSnapshot();
 });
