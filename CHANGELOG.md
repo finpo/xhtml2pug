@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.3](https://github.com/finpo/xhtml2pug/compare/v5.1.2...v5.1.3) (2025-06-19)
+
+
+### Bug Fixes
+
+* 僅執行 .html 檔案的測試以避免非目標檔案誤測 ([9c8bc6b](https://github.com/finpo/xhtml2pug/commit/9c8bc6bfda4a9d97fc4a99a1796078b639ae91bb))
+* 更動到測試檔案的縮排，改回原版 ([e7f691e](https://github.com/finpo/xhtml2pug/commit/e7f691e9c4ac4f6be31834102d9b525c733981e7))
+* 更動到測試檔案縮排，修正原檔 ([683ab97](https://github.com/finpo/xhtml2pug/commit/683ab977986302130348a679936e0d106238993f))
+* 測試程式中快照包含 .json 設定檔，並且重新改寫 [#6](https://github.com/finpo/xhtml2pug/issues/6) ([38ca660](https://github.com/finpo/xhtml2pug/commit/38ca66052aa40277f0be381d8ac5b7a3cb3e065c))
+* 測試程式中快照包含 .json 設定檔，並且重新改寫 [#6](https://github.com/finpo/xhtml2pug/issues/6) ([38ca660](https://github.com/finpo/xhtml2pug/commit/38ca66052aa40277f0be381d8ac5b7a3cb3e065c))
+
 ## [5.1.2](https://github.com/finpo/xhtml2pug/compare/v5.1.1...v5.1.2) (2025-06-18)
 
 
