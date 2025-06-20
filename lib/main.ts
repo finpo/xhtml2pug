@@ -27,6 +27,7 @@ export function convert(html: string, options: Partial<PublicOptions> = {}) {
 
   return compileAst(
     options.bodyLess ? convertedAst : wrapIntoBase(convertedAst),
-    definedOptions
+    definedOptions,
+    html.split("\n"),
   );
 }

@@ -414,44 +414,44 @@ html
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa var
-      | Converter
+      |  Converter
       span.hl.opt ,
-      | Output
+      |  Output
       span.hl.opt ,
-      | Parser
+      |  Parser
       span.hl.opt ,
-      | StreamOutput
+      |  StreamOutput
       span.hl.opt ,
-      | StringOutput
+      |  StringOutput
       span.hl.opt ,
-      | Writer
+      |  Writer
       span.hl.opt ,
-      | publicIdDocTypeNames
+      |  publicIdDocTypeNames
       span.hl.opt ,
-      | scope
+      |  scope
       span.hl.opt ,
-      | systemIdDocTypeNames
+      |  systemIdDocTypeNames
       span.hl.opt ,
-      | _ref
+      |  _ref
       span.hl.opt ,
-      | __hasProp
+      | __hasProp 
       span.hl.opt = {}.
       | hasOwnProperty
       span.hl.opt ,
-      | __extends
+      | __extends 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | child
       span.hl.opt ,
-      | parent
+      |  parent
       span.hl.opt ) {
       span.hl.kwa for
       span.hl.opt (
       span.hl.kwa var
-      | key
+      |  key 
       span.hl.kwa in
-      | parent
+      |  parent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
@@ -461,12 +461,12 @@ html
       span.hl.opt (
       | parent
       span.hl.opt ,
-      | key
+      |  key
       span.hl.opt ))
-      | child
+      |  child
       span.hl.kwc [key]
       span.hl.opt =
-      | parent
+      |  parent
       span.hl.kwc [key]
       span.hl.opt ; }
       span.hl.kwa function
@@ -474,62 +474,62 @@ html
       span.hl.opt () {
       span.hl.kwa this
       span.hl.opt .
-      | constructor
+      | constructor 
       span.hl.opt =
-      | child
+      |  child
       span.hl.opt ; }
-      | ctor
+      |  ctor
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt =
-      | parent
+      |  parent
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt ;
-      | child
+      |  child
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd ctor
       span.hl.opt ();
-      | child
+      |  child
       span.hl.opt .
-      | __super__
+      | __super__ 
       span.hl.opt =
-      | parent
+      |  parent
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt ;
       span.hl.kwa return
-      | child
+      |  child
       span.hl.opt ; };
-      | scope
+      | scope 
       span.hl.opt =
       span.hl.kwa typeof
-      | exports
+      |  exports 
       span.hl.opt !==
       span.hl.str &amp;quot;undefined&amp;quot;
       span.hl.opt &amp;amp;&amp;amp;
-      | exports
+      |  exports 
       span.hl.opt !==
       span.hl.kwa null
-      | ? exports
+      |  ? exports 
       span.hl.opt : (
-      | _ref
+      | _ref 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt .
       | Html2Jade
       span.hl.opt ) !=
       span.hl.kwa null
-      | ? _ref
+      |  ? _ref 
       span.hl.opt :
       span.hl.kwa this
       span.hl.opt .
-      | Html2Jade
+      | Html2Jade 
       span.hl.opt = {};
-      | Parser
+      | Parser 
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
@@ -540,16 +540,16 @@ html
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | options
+      | options 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      | options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa this
       span.hl.opt .
-      | jsdom
+      | jsdom 
       span.hl.opt =
       span.hl.kwd require
       span.hl.opt (
@@ -560,13 +560,13 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | parse
+      | parse 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | arg
       span.hl.opt ,
-      | cb
+      |  cb
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (!
@@ -588,15 +588,15 @@ html
       span.hl.opt (
       | arg
       span.hl.opt ,
-      | cb
+      |  cb
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
       span.hl.kwa return
-      | Parser
+      |  Parser
       span.hl.opt ;
       span.hl.opt })();
-      | Writer
+      | Writer 
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
@@ -606,56 +606,56 @@ html
       | options
       span.hl.opt ) {
       span.hl.kwa var
-      | _ref1
+      |  _ref1
       span.hl.opt ,
-      | _ref2
+      |  _ref2
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | options
+      | options 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      | options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa this
       span.hl.opt .
-      | wrapLength
+      | wrapLength 
       span.hl.opt = (
-      | _ref1
+      | _ref1 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | wrapLength
       span.hl.opt ) !=
       span.hl.kwa null
-      | ? _ref1
+      |  ? _ref1 
       span.hl.opt :
       span.hl.num 80
       span.hl.opt ;
       span.hl.kwa this
       span.hl.opt .
-      | scalate
+      | scalate 
       span.hl.opt = (
-      | _ref2
+      | _ref2 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | scalate
       span.hl.opt ) !=
       span.hl.kwa null
-      | ? _ref2
+      |  ? _ref2 
       span.hl.opt :
       span.hl.kwa false
       span.hl.opt ;
       span.hl.kwa this
       span.hl.opt .
-      | attrSep
+      | attrSep 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt .
-      | scalate ?
+      | scalate ? 
       span.hl.str &apos; &apos;
       span.hl.opt :
       span.hl.str &apos;, &apos;
@@ -665,25 +665,25 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | tagHead
+      | tagHead 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ) {
       span.hl.kwa var
-      | classes
+      |  classes
       span.hl.opt ,
-      | result
+      |  result
       span.hl.opt ;
-      | result
+      | result 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
-      | tagName
+      | tagName 
       span.hl.opt !==
       span.hl.str &apos;DIV&apos;
-      | ? node
+      |  ? node
       span.hl.opt .
       | tagName
       span.hl.opt .
@@ -697,11 +697,11 @@ html
       span.hl.opt .
       | id
       span.hl.opt ) {
-      | result
+      | result 
       span.hl.opt +=
       span.hl.str &apos;#&apos;
       span.hl.opt +
-      | node
+      |  node
       span.hl.opt .
       | id
       span.hl.opt ;
@@ -714,19 +714,19 @@ html
       span.hl.opt (
       span.hl.str &apos;class&apos;
       span.hl.opt ) &amp;amp;&amp;amp;
-      | node
+      |  node
       span.hl.opt .
       span.hl.kwd getAttribute
       span.hl.opt (
       span.hl.str &apos;class&apos;
       span.hl.opt ).
-      | length
+      | length 
       span.hl.opt &amp;gt;
       span.hl.num 0
       span.hl.opt ) {
-      | classes
+      | classes 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
       span.hl.kwd getAttribute
       span.hl.opt (
@@ -744,24 +744,24 @@ html
       span.hl.opt ) {
       span.hl.kwa return
       span.hl.opt (
-      | item
+      | item 
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt ) &amp;amp;&amp;amp;
-      | item
+      |  item
       span.hl.opt .
       span.hl.kwd trim
       span.hl.opt ().
-      | length
+      | length 
       span.hl.opt &amp;gt;
       span.hl.num 0
       span.hl.opt ;
       span.hl.opt });
-      | result
+      | result 
       span.hl.opt +=
       span.hl.str &apos;.&apos;
       span.hl.opt +
-      | classes
+      |  classes
       span.hl.opt .
       span.hl.kwd join
       span.hl.opt (
@@ -772,45 +772,45 @@ html
       span.hl.opt (
       | result
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt ===
       span.hl.num 0
       span.hl.opt ) {
-      | result
+      | result 
       span.hl.opt =
       span.hl.str &apos;div&apos;
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa return
-      | result
+      |  result
       span.hl.opt ;
       span.hl.opt };
       | Writer
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | tagAttr
+      | tagAttr 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ) {
       span.hl.kwa var
-      | attr
+      |  attr
       span.hl.opt ,
-      | attrs
+      |  attrs
       span.hl.opt ,
-      | nodeName
+      |  nodeName
       span.hl.opt ,
-      | result
+      |  result
       span.hl.opt ,
-      | _i
+      |  _i
       span.hl.opt ,
-      | _len
+      |  _len
       span.hl.opt ;
-      | attrs
+      | attrs 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
       | attributes
       span.hl.opt ;
@@ -818,7 +818,7 @@ html
       span.hl.opt (!
       | attrs || attrs
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt ===
       span.hl.num 0
       span.hl.opt ) {
@@ -828,48 +828,48 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | result
+      | result 
       span.hl.opt = [];
       span.hl.kwa for
       span.hl.opt (
-      | _i
+      | _i 
       span.hl.opt =
       span.hl.num 0
       span.hl.opt ,
-      | _len
+      |  _len 
       span.hl.opt =
-      | attrs
+      |  attrs
       span.hl.opt .
       | length
       span.hl.opt ;
-      | _i
+      |  _i 
       span.hl.opt &amp;lt;
-      | _len
+      |  _len
       span.hl.opt ;
-      | _i
+      |  _i
       span.hl.opt ++) {
-      | attr
+      | attr 
       span.hl.opt =
-      | attrs
+      |  attrs
       span.hl.kwc [_i]
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | attr
+      | attr 
       span.hl.opt &amp;amp;&amp;amp; (
-      | nodeName
+      | nodeName 
       span.hl.opt =
-      | attr
+      |  attr
       span.hl.opt .
       | nodeName
       span.hl.opt )) {
       span.hl.kwa if
       span.hl.opt (
-      | nodeName
+      | nodeName 
       span.hl.opt !==
       span.hl.str &apos;id&apos;
       span.hl.opt &amp;amp;&amp;amp;
-      | nodeName
+      |  nodeName 
       span.hl.opt !==
       span.hl.str &apos;class&apos;
       span.hl.opt &amp;amp;&amp;amp;
@@ -877,7 +877,7 @@ html
       span.hl.opt (
       | attr
       span.hl.opt .
-      | nodeValue
+      | nodeValue 
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt )) {
@@ -887,13 +887,13 @@ html
       span.hl.opt (
       | attr
       span.hl.opt .
-      | nodeName
+      | nodeName 
       span.hl.opt +
       span.hl.str &apos;=
       span.hl.esc \\&apos;
       span.hl.str &apos;
       span.hl.opt +
-      | attr
+      |  attr
       span.hl.opt .
       | nodeValue
       span.hl.opt .
@@ -1021,7 +1021,7 @@ html
       span.hl.str         escapeBackslash = false;
       span.hl.str       }
       span.hl.str       prefix = pipe ? &apos;
-      | |
+      | | 
       span.hl.str &apos; : &apos;
       span.hl.str &apos;;
       span.hl.str       if (trim) {
@@ -1190,7 +1190,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa else if
@@ -1207,9 +1207,9 @@ html
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
-      | tagHead
+      | tagHead 
       span.hl.opt +
-      | tagAttr
+      |  tagAttr 
       span.hl.opt +
       span.hl.str &apos;.&apos;
       span.hl.opt );
@@ -1217,7 +1217,7 @@ html
       span.hl.opt .
       span.hl.kwd enter
       span.hl.opt ();
-      | firstline
+      | firstline 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -1234,31 +1234,31 @@ html
       | child
       span.hl.opt ) {
       span.hl.kwa var
-      | data
+      |  data
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
       | child
       span.hl.opt .
-      | nodeType
+      | nodeType 
       span.hl.opt ===
       span.hl.num 3
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
-      | child
+      |  child
       span.hl.opt .
       | data
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt ((
-      | data
+      | data 
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt ) &amp;amp;&amp;amp;
-      | data
+      |  data
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt &amp;gt;
       span.hl.num 0
       span.hl.opt ) {
@@ -1280,9 +1280,9 @@ html
       span.hl.opt /) ===
       span.hl.num 0
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
-      | data
+      |  data
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
@@ -1295,22 +1295,22 @@ html
       span.hl.str &apos;&apos;
       span.hl.opt );
       span.hl.opt }
-      | data
+      | data 
       span.hl.opt =
       span.hl.str &apos;
       span.hl.esc \\\\
       span.hl.str n&apos;
       span.hl.opt +
-      | data
+      |  data
       span.hl.opt ;
-      | firstline
+      | firstline 
       span.hl.opt =
       span.hl.kwa false
       span.hl.opt ;
       span.hl.opt }
-      | data
+      | data 
       span.hl.opt =
-      | data
+      |  data
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
@@ -1322,9 +1322,9 @@ html
       span.hl.esc \\\\
       span.hl.str t&apos;
       span.hl.opt );
-      | data
+      | data 
       span.hl.opt =
-      | data
+      |  data
       span.hl.opt .
       span.hl.kwd replace
       span.hl.opt (/
@@ -1340,12 +1340,12 @@ html
       span.hl.esc \\n
       span.hl.str &apos;
       span.hl.opt +
-      | output
+      |  output
       span.hl.opt .
       | indents
       span.hl.opt );
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd write
       span.hl.opt (
@@ -1359,7 +1359,7 @@ html
       span.hl.kwd writeln
       span.hl.opt ();
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd leave
       span.hl.opt ();
@@ -1372,11 +1372,11 @@ html
       span.hl.opt (
       | tagText
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt &amp;gt;
       span.hl.num 0
       span.hl.opt &amp;amp;&amp;amp;
-      | tagText
+      |  tagText
       span.hl.opt .
       span.hl.kwd charAt
       span.hl.opt (
@@ -1384,27 +1384,27 @@ html
       span.hl.opt ) ===
       span.hl.str &apos;=&apos;
       span.hl.opt ) {
-      | tagText
+      | tagText 
       span.hl.opt =
       span.hl.str &apos;
       span.hl.esc \\\\
       span.hl.str &apos;
       span.hl.opt +
-      | tagText
+      |  tagText
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
-      | tagHead
+      | tagHead 
       span.hl.opt +
-      | tagAttr
+      |  tagAttr 
       span.hl.opt +
       span.hl.str &apos; &apos;
       span.hl.opt +
-      | tagText
+      |  tagText
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa else
@@ -1413,9 +1413,9 @@ html
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
-      | tagHead
+      | tagHead 
       span.hl.opt +
-      | tagAttr
+      |  tagAttr
       span.hl.opt );
       span.hl.kwa return this
       span.hl.opt .
@@ -1423,7 +1423,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
@@ -1431,28 +1431,28 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | children
+      | children 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | parent
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa var
-      | _this
+      |  _this 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -1479,33 +1479,33 @@ html
       | child
       span.hl.opt ) {
       span.hl.kwa var
-      | nodeType
+      |  nodeType
       span.hl.opt ;
-      | nodeType
+      | nodeType 
       span.hl.opt =
-      | child
+      |  child
       span.hl.opt .
       | nodeType
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | nodeType
+      | nodeType 
       span.hl.opt ===
       span.hl.num 1
       span.hl.opt ) {
       span.hl.kwa return
-      | _this
+      |  _this
       span.hl.opt .
       span.hl.kwd element
       span.hl.opt (
       | child
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa else if
       span.hl.opt (
-      | nodeType
+      | nodeType 
       span.hl.opt ===
       span.hl.num 3
       span.hl.opt ) {
@@ -1513,18 +1513,18 @@ html
       span.hl.opt (
       | parent
       span.hl.opt .
-      | _nodeName
+      | _nodeName 
       span.hl.opt ===
       span.hl.str &apos;code&apos;
       span.hl.opt ) {
       span.hl.kwa return
-      | _this
+      |  _this
       span.hl.opt .
       span.hl.kwd text
       span.hl.opt (
       | child
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -1536,30 +1536,30 @@ html
       span.hl.kwa else
       span.hl.opt {
       span.hl.kwa return
-      | _this
+      |  _this
       span.hl.opt .
       span.hl.kwd text
       span.hl.opt (
       | child
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.opt }
       span.hl.kwa else if
       span.hl.opt (
-      | nodeType
+      | nodeType 
       span.hl.opt ===
       span.hl.num 8
       span.hl.opt ) {
       span.hl.kwa return
-      | _this
+      |  _this
       span.hl.opt .
       span.hl.kwd comment
       span.hl.opt (
       | child
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.opt });
@@ -1568,7 +1568,7 @@ html
       | indent
       span.hl.opt ) {
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd leave
       span.hl.opt ();
@@ -1578,19 +1578,19 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | text
+      | text 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | pipe
+      |  pipe
       span.hl.opt ,
-      | trim
+      |  trim
       span.hl.opt ,
-      | wrap
+      |  wrap
       span.hl.opt ) {
       | node
       span.hl.opt .
@@ -1604,41 +1604,41 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | pipe
+      |  pipe
       span.hl.opt ,
-      | trim
+      |  trim
       span.hl.opt ,
-      | wrap
+      |  wrap
       span.hl.opt );
       span.hl.opt };
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | comment
+      | comment 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ) {
       span.hl.kwa var
-      | condition
+      |  condition
       span.hl.opt ,
-      | data
+      |  data
       span.hl.opt ,
-      | lines
+      |  lines
       span.hl.opt ,
-      | _this
+      | _this 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt ;
-      | condition
+      | condition 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
       | data
       span.hl.opt .
@@ -1659,21 +1659,21 @@ html
       span.hl.opt (!
       | condition
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
-      | data ||
+      | data || 
       span.hl.str &apos;&apos;
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
       | data
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt ===
       span.hl.num 0
-      | || data
+      |  || data
       span.hl.opt .
       span.hl.kwd search
       span.hl.opt (/
@@ -1684,7 +1684,7 @@ html
       span.hl.num 1
       span.hl.opt ) {
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -1707,9 +1707,9 @@ html
       span.hl.opt .
       span.hl.kwd enter
       span.hl.opt ();
-      | lines
+      | lines 
       span.hl.opt =
-      | data
+      |  data
       span.hl.opt .
       span.hl.kwd split
       span.hl.opt (/
@@ -1726,7 +1726,7 @@ html
       | line
       span.hl.opt ) {
       span.hl.kwa return
-      | _this
+      |  _this
       span.hl.opt .
       | writer
       span.hl.opt .
@@ -1734,7 +1734,7 @@ html
       span.hl.opt (
       | line
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -1744,7 +1744,7 @@ html
       span.hl.opt );
       span.hl.opt });
       span.hl.kwa return
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd leave
       span.hl.opt ();
@@ -1758,10 +1758,10 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | condition
+      |  condition
       span.hl.kwc [1]
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
@@ -1769,24 +1769,24 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | conditional
+      | conditional 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ,
-      | condition
+      |  condition
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ) {
       span.hl.kwa var
-      | conditionalElem
+      |  conditionalElem
       span.hl.opt ,
-      | innerHTML
+      |  innerHTML
       span.hl.opt ;
-      | innerHTML
+      | innerHTML 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
       | textContent
       span.hl.opt .
@@ -1825,22 +1825,22 @@ html
       span.hl.opt ) ===
       span.hl.num 0
       span.hl.opt ) {
-      | condition
+      | condition 
       span.hl.opt =
       span.hl.str &amp;quot; [&amp;quot;
       span.hl.opt +
-      | condition
+      |  condition 
       span.hl.opt +
       span.hl.str &amp;quot;] &amp;lt;!&amp;quot;
       span.hl.opt ;
-      | innerHTML
+      | innerHTML 
       span.hl.opt =
       span.hl.kwa null
       span.hl.opt ;
       span.hl.opt }
-      | conditionalElem
+      | conditionalElem 
       span.hl.opt =
-      | node
+      |  node
       span.hl.opt .
       | ownerDocument
       span.hl.opt .
@@ -1854,7 +1854,7 @@ html
       span.hl.opt (
       span.hl.str &apos;condition&apos;
       span.hl.opt ,
-      | condition
+      |  condition
       span.hl.opt );
       span.hl.kwa if
       span.hl.opt (
@@ -1862,13 +1862,13 @@ html
       span.hl.opt ) {
       | conditionalElem
       span.hl.opt .
-      | innerHTML
+      | innerHTML 
       span.hl.opt =
-      | innerHTML
+      |  innerHTML
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa return
-      | node
+      |  node
       span.hl.opt .
       | parentNode
       span.hl.opt .
@@ -1876,7 +1876,7 @@ html
       span.hl.opt (
       | conditionalElem
       span.hl.opt ,
-      | node
+      |  node
       span.hl.opt .
       | nextSibling
       span.hl.opt );
@@ -1885,17 +1885,17 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | script
+      | script 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | tagHead
+      |  tagHead
       span.hl.opt ,
-      | tagAttr
+      |  tagAttr
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
@@ -1917,7 +1917,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -1934,9 +1934,9 @@ html
       span.hl.opt (
       span.hl.str &amp;quot;&amp;quot;
       span.hl.opt +
-      | tagHead
+      |  tagHead 
       span.hl.opt +
-      | tagAttr
+      |  tagAttr
       span.hl.opt );
       span.hl.kwa return this
       span.hl.opt .
@@ -1946,7 +1946,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -1962,17 +1962,17 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | style
+      | style 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | tagHead
+      |  tagHead
       span.hl.opt ,
-      | tagAttr
+      |  tagAttr
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
@@ -1994,7 +1994,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -2011,9 +2011,9 @@ html
       span.hl.opt (
       span.hl.str &amp;quot;&amp;quot;
       span.hl.opt +
-      | tagHead
+      |  tagHead 
       span.hl.opt +
-      | tagAttr
+      |  tagAttr
       span.hl.opt );
       span.hl.kwa return this
       span.hl.opt .
@@ -2023,7 +2023,7 @@ html
       span.hl.opt (
       | node
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
       span.hl.kwa false
       span.hl.opt ,
@@ -2034,10 +2034,10 @@ html
       span.hl.opt }
       span.hl.opt };
       span.hl.kwa return
-      | Converter
+      |  Converter
       span.hl.opt ;
       span.hl.opt })();
-      | Output
+      | Output 
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
@@ -2046,7 +2046,7 @@ html
       span.hl.opt () {
       span.hl.kwa this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2055,13 +2055,13 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | enter
+      | enter 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa return this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt +=
       span.hl.str &apos;  &apos;
       span.hl.opt ;
@@ -2070,13 +2070,13 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | leave
+      | leave 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa return this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt .
@@ -2091,21 +2091,21 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | write
+      | write 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2115,31 +2115,31 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | writeln
+      | writeln 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.opt };
       span.hl.kwa return
-      | Output
+      |  Output
       span.hl.opt ;
       span.hl.opt })();
-      | StringOutput
+      | StringOutput 
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt (
@@ -2149,7 +2149,7 @@ html
       span.hl.opt (
       | StringOutput
       span.hl.opt ,
-      | _super
+      |  _super
       span.hl.opt );
       span.hl.kwa function
       span.hl.kwd StringOutput
@@ -2164,43 +2164,43 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt ,
-      | arguments
+      |  arguments
       span.hl.opt );
       span.hl.kwa this
       span.hl.opt .
-      | fragments
+      | fragments 
       span.hl.opt = [];
       span.hl.opt }
       | StringOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | write
+      | write 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2217,9 +2217,9 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt +
-      | data
+      |  data
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa else
@@ -2238,32 +2238,32 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | writeln
+      | writeln 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2280,9 +2280,9 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt +
-      | data
+      |  data 
       span.hl.opt +
       span.hl.str &apos;
       span.hl.esc \\n
@@ -2297,7 +2297,7 @@ html
       span.hl.opt .
       span.hl.kwd push
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt +
       span.hl.str &apos;
       span.hl.esc \\n
@@ -2309,14 +2309,14 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | final
+      | final 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa var
-      | result
+      |  result
       span.hl.opt ;
-      | result
+      | result 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt .
@@ -2328,19 +2328,19 @@ html
       span.hl.opt );
       span.hl.kwa this
       span.hl.opt .
-      | fragments
+      | fragments 
       span.hl.opt = [];
       span.hl.kwa return
-      | result
+      |  result
       span.hl.opt ;
       span.hl.opt };
       span.hl.kwa return
-      | StringOutput
+      |  StringOutput
       span.hl.opt ;
       span.hl.opt })(
       | Output
       span.hl.opt );
-      | StreamOutput
+      | StreamOutput 
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt (
@@ -2350,7 +2350,7 @@ html
       span.hl.opt (
       | StreamOutput
       span.hl.opt ,
-      | _super
+      |  _super
       span.hl.opt );
       span.hl.kwa function
       span.hl.kwd StreamOutput
@@ -2359,9 +2359,9 @@ html
       span.hl.opt ) {
       span.hl.kwa this
       span.hl.opt .
-      | stream
+      | stream 
       span.hl.opt =
-      | stream
+      |  stream
       span.hl.opt ;
       | StreamOutput
       span.hl.opt .
@@ -2373,39 +2373,39 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt ,
-      | arguments
+      |  arguments
       span.hl.opt );
       span.hl.opt }
       | StreamOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | write
+      | write 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2422,9 +2422,9 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt +
-      | data
+      |  data
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa else
@@ -2443,32 +2443,32 @@ html
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
-      | writeln
+      | writeln 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | data
       span.hl.opt ,
-      | indent
+      |  indent
       span.hl.opt ) {
       span.hl.kwa if
       span.hl.opt (
-      | indent
+      | indent 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent
+      | indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data
+      | data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2485,9 +2485,9 @@ html
       span.hl.opt (
       span.hl.kwa this
       span.hl.opt .
-      | indents
+      | indents 
       span.hl.opt +
-      | data
+      |  data 
       span.hl.opt +
       span.hl.str &apos;
       span.hl.esc \\n
@@ -2502,7 +2502,7 @@ html
       span.hl.opt .
       span.hl.kwd write
       span.hl.opt (
-      | data
+      | data 
       span.hl.opt +
       span.hl.str &apos;
       span.hl.esc \\n
@@ -2511,87 +2511,87 @@ html
       span.hl.opt }
       span.hl.opt };
       span.hl.kwa return
-      | StreamOutput
+      |  StreamOutput
       span.hl.opt ;
       span.hl.opt })(
       | Output
       span.hl.opt );
       | scope
       span.hl.opt .
-      | Output
+      | Output 
       span.hl.opt =
-      | Output
+      |  Output
       span.hl.opt ;
       | scope
       span.hl.opt .
-      | StringOutput
+      | StringOutput 
       span.hl.opt =
-      | StringOutput
+      |  StringOutput
       span.hl.opt ;
       | scope
       span.hl.opt .
-      | Converter
+      | Converter 
       span.hl.opt =
-      | Converter
+      |  Converter
       span.hl.opt ;
       | scope
       span.hl.opt .
-      | Writer
+      | Writer 
       span.hl.opt =
-      | Writer
+      |  Writer
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
       span.hl.kwa typeof
-      | exports
+      |  exports 
       span.hl.opt !==
       span.hl.str &amp;quot;undefined&amp;quot;
       span.hl.opt &amp;amp;&amp;amp;
-      | exports
+      |  exports 
       span.hl.opt !==
       span.hl.kwa null
       span.hl.opt ) {
       | scope
       span.hl.opt .
-      | Parser
+      | Parser 
       span.hl.opt =
-      | Parser
+      |  Parser
       span.hl.opt ;
       | scope
       span.hl.opt .
-      | StreamOutput
+      | StreamOutput 
       span.hl.opt =
-      | StreamOutput
+      |  StreamOutput
       span.hl.opt ;
       | scope
       span.hl.opt .
-      | convert
+      | convert 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | input
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt ,
-      | options
+      |  options
       span.hl.opt ) {
       span.hl.kwa var
-      | _ref1
+      |  _ref1
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | options
+      | options 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      | options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt ((
-      | _ref1
+      | _ref1 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | parser
       span.hl.opt ) ==
@@ -2599,7 +2599,7 @@ html
       span.hl.opt ) {
       | options
       span.hl.opt .
-      | parser
+      | parser 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd Parser
@@ -2608,7 +2608,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa return
-      | options
+      |  options
       span.hl.opt .
       | parser
       span.hl.opt .
@@ -2620,36 +2620,36 @@ html
       span.hl.opt (
       | errors
       span.hl.opt ,
-      | window
+      |  window
       span.hl.opt ) {
       span.hl.kwa var
-      | _ref2
+      |  _ref2
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | errors
+      | errors 
       span.hl.opt !=
       span.hl.kwa null
-      | ? errors
+      |  ? errors
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt :
       span.hl.kwa void
       span.hl.num 0
       span.hl.opt ) {
       span.hl.kwa return
-      | errors
+      |  errors
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
       span.hl.kwa if
       span.hl.opt (
-      | output
+      | output 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | output
+      | output 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd StreamOutput
@@ -2661,9 +2661,9 @@ html
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt ((
-      | _ref2
+      | _ref2 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | converter
       span.hl.opt ) ==
@@ -2671,7 +2671,7 @@ html
       span.hl.opt ) {
       | options
       span.hl.opt .
-      | converter
+      | converter 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd Converter
@@ -2680,7 +2680,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa return
-      | options
+      |  options
       span.hl.opt .
       | converter
       span.hl.opt .
@@ -2690,7 +2690,7 @@ html
       span.hl.opt .
       | document
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.opt }
       span.hl.opt });
@@ -2698,33 +2698,33 @@ html
       span.hl.opt }
       | scope
       span.hl.opt .
-      | convertHtml
+      | convertHtml 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | html
       span.hl.opt ,
-      | options
+      |  options
       span.hl.opt ,
-      | cb
+      |  cb
       span.hl.opt ) {
       span.hl.kwa var
-      | _ref1
+      |  _ref1
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | options
+      | options 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      | options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa if
       span.hl.opt ((
-      | _ref1
+      | _ref1 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | parser
       span.hl.opt ) ==
@@ -2732,7 +2732,7 @@ html
       span.hl.opt ) {
       | options
       span.hl.opt .
-      | parser
+      | parser 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd Parser
@@ -2741,7 +2741,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.kwa return
-      | options
+      |  options
       span.hl.opt .
       | parser
       span.hl.opt .
@@ -2753,52 +2753,52 @@ html
       span.hl.opt (
       | errors
       span.hl.opt ,
-      | window
+      |  window
       span.hl.opt ) {
       span.hl.kwa var
-      | output
+      |  output
       span.hl.opt ,
-      | _ref2
+      |  _ref2
       span.hl.opt ,
-      | _ref3
+      |  _ref3
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | errors
+      | errors 
       span.hl.opt !=
       span.hl.kwa null
-      | ? errors
+      |  ? errors
       span.hl.opt .
-      | length
+      | length 
       span.hl.opt :
       span.hl.kwa void
       span.hl.num 0
       span.hl.opt ) {
       span.hl.kwa return
-      | errors
+      |  errors
       span.hl.opt ;
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output
+      | output 
       span.hl.opt = (
-      | _ref2
+      | _ref2 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | output
       span.hl.opt ) !=
       span.hl.kwa null
-      | ? _ref2
+      |  ? _ref2 
       span.hl.opt :
       span.hl.kwa new
       span.hl.kwd StringOutput
       span.hl.opt ();
       span.hl.kwa if
       span.hl.opt ((
-      | _ref3
+      | _ref3 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | converter
       span.hl.opt ) ==
@@ -2806,7 +2806,7 @@ html
       span.hl.opt ) {
       | options
       span.hl.opt .
-      | converter
+      | converter 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd Converter
@@ -2824,11 +2824,11 @@ html
       span.hl.opt .
       | document
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.kwa if
       span.hl.opt (
-      | cb
+      | cb 
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt ) {
@@ -2837,7 +2837,7 @@ html
       span.hl.opt (
       span.hl.kwa null
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd final
       span.hl.opt ());
@@ -2847,51 +2847,51 @@ html
       span.hl.opt };
       | scope
       span.hl.opt .
-      | convertDocument
+      | convertDocument 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
       | document
       span.hl.opt ,
-      | options
+      |  options
       span.hl.opt ,
-      | cb
+      |  cb
       span.hl.opt ) {
       span.hl.kwa var
-      | output
+      |  output
       span.hl.opt ,
-      | _ref1
+      |  _ref1
       span.hl.opt ,
-      | _ref2
+      |  _ref2
       span.hl.opt ;
       span.hl.kwa if
       span.hl.opt (
-      | options
+      | options 
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      | options 
       span.hl.opt = {};
       span.hl.opt }
-      | output
+      | output 
       span.hl.opt = (
-      | _ref1
+      | _ref1 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | output
       span.hl.opt ) !=
       span.hl.kwa null
-      | ? _ref1
+      |  ? _ref1 
       span.hl.opt :
       span.hl.kwa new
       span.hl.kwd StringOutput
       span.hl.opt ();
       span.hl.kwa if
       span.hl.opt ((
-      | _ref2
+      | _ref2 
       span.hl.opt =
-      | options
+      |  options
       span.hl.opt .
       | converter
       span.hl.opt ) ==
@@ -2899,7 +2899,7 @@ html
       span.hl.opt ) {
       | options
       span.hl.opt .
-      | converter
+      | converter 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd Converter
@@ -2915,11 +2915,11 @@ html
       span.hl.opt (
       | document
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt );
       span.hl.kwa if
       span.hl.opt (
-      | cb
+      | cb 
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt ) {
@@ -2928,7 +2928,7 @@ html
       span.hl.opt (
       span.hl.kwa null
       span.hl.opt ,
-      | output
+      |  output
       span.hl.opt .
       span.hl.kwd final
       span.hl.opt ());
@@ -2957,25 +2957,25 @@ html
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa var
-      | Converter
+      |  Converter
       span.hl.opt ,
-      | Output
+      |  Output
       span.hl.opt ,
-      | Parser
+      |  Parser
       span.hl.opt ,
-      | StreamOutput
+      |  StreamOutput
       span.hl.opt ,
-      | StringOutput
+      |  StringOutput
       span.hl.opt ,
-      | Writer
+      |  Writer
       span.hl.opt ,
-      | publicIdDocTypeNames
+      |  publicIdDocTypeNames
       span.hl.opt ,
-      | scope
+      |  scope
       span.hl.opt ,
-      | systemIdDocTypeNames
+      |  systemIdDocTypeNames
       span.hl.opt ,
-      | _ref
+      |  _ref
       span.hl.opt ,
 "
 `;
@@ -3039,25 +3039,25 @@ html
       span.hl.kwa function
       span.hl.opt () {
       span.hl.kwa var
-      | Converter
+      |  Converter
       span.hl.opt ,
-      | Output
+      |  Output
       span.hl.opt ,
-      | Parser
+      |  Parser
       span.hl.opt ,
-      | StreamOutput
+      |  StreamOutput
       span.hl.opt ,
-      | StringOutput
+      |  StringOutput
       span.hl.opt ,
-      | Writer
+      |  Writer
       span.hl.opt ,
-      | publicIdDocTypeNames
+      |  publicIdDocTypeNames
       span.hl.opt ,
-      | scope
+      |  scope
       span.hl.opt ,
-      | systemIdDocTypeNames
+      |  systemIdDocTypeNames
       span.hl.opt ,
-      | _ref
+      |  _ref
       span.hl.opt ,
 "
 `;
@@ -3075,7 +3075,7 @@ exports[`parser html: should convert whitespace.html to match snapshot 1`] = `
   body
     p Here is a 
       a(href="#") link
-      | with whitespaces around it
+      |  with whitespaces around it
 "
 `;
 
