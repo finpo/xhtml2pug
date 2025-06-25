@@ -45,39 +45,24 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
 const compileText = (
   node: Text,
   options: CompileOptions,
-  htmlOfLines: string[] = [],
 ) => {
   const resultTextFilter = node.value
-    // .trimEnd()
     .split("\n")
     .filter(Boolean)
     .filter((str) => str.trim() !== "");
-  let isTrimSpace = false;
-  let resultTextFilterFirst;
-  if (resultTextFilter.length > 1) {
-    resultTextFilterFirst = resultTextFilter[0].match(/^(\s*)/)[0];
-  }
-
+    
+  const indent = getIndent(options);
   const resultTextMap = resultTextFilter.map((str, index) => {
-    const indent = getIndent(options);
-    // const strSpaces = str.match(/^(\s*)/)[0] ?? "";
-    // if (strSpaces === indent) {
-    //   isTrimSpace = true;
-    // }
-    if (index !== 0) {
-      isTrimSpace = true;
+    const strSpaces = str.match(/^(\s*)/)[0] ?? "";
+    let spaceCount = strSpaces.length - (options.level -2) * 2;
+    if (spaceCount < 0) {
+      spaceCount = 0;
     }
-    if (htmlOfLines.length) {
-      const getHtmlLinesContainStrValue = htmlOfLines.filter((line) =>
-        line.startsWith(str),
-      );
-      if (getHtmlLinesContainStrValue.length) {
-        isTrimSpace = true;
-      }
+    if ((node.value?.startsWith('\n') && str.length > 2) || (!node.value?.startsWith('\n') && index > 0)) {
+      str = " ".repeat(spaceCount) + str.trimStart();
     }
-    return `${indent}| ${isTrimSpace ? str.trimStart() : str}`;
+    return `${indent}| ${str}`;
   });
-  // .join("\n");
   const resultText = resultTextMap.join("\n");
   return options.encode ? encode(resultText) : resultText;
 };
@@ -160,8 +145,7 @@ const compileTag = (
           ...options,
           level: options.level + 1,
         },
-        htmlOfLines,
-      ).replace(/(\|\s*)/, "| ")
+      )
     : " " + compileSingleLineText(textNode, options);
   return `${tag}${resultText}`;
 };
@@ -182,7 +166,7 @@ export function compileAst(
         case Node.Style:
           return acc.concat(compileStyle(node, newOptions));
         case Node.Text:
-          return acc.concat(compileText(node, newOptions, htmlOfLines));
+          return acc.concat(compileText(node, newOptions));
         case Node.Comment:
           return acc.concat(compileComment(node, newOptions));
         case Node.Tag:

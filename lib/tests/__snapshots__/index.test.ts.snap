@@ -91,10 +91,10 @@ exports[`parser html: should convert conditional.html to match snapshot 1`] = `
     script.
       //<![CDATA[
       //]]>
-    | Hello World.
-    | blah
-    | blah
-    | blah
+    |     Hello World.
+    |     blah
+    |     blah
+    |     blah
 "
 `;
 
@@ -274,8 +274,8 @@ exports[`parser html: should convert empty-class.html to match snapshot 1`] = `
   head
   body(class="")
     code
-      | blah
-      | blah
+      |     blah
+      |     blah
 "
 `;
 
@@ -434,11 +434,11 @@ html
       span.hl.opt ,
       |  _ref
       span.hl.opt ,
-      | __hasProp 
+      |   __hasProp 
       span.hl.opt = {}.
       | hasOwnProperty
       span.hl.opt ,
-      | __extends 
+      |   __extends 
       span.hl.opt =
       span.hl.kwa function
       span.hl.opt (
@@ -544,7 +544,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options 
+      |       options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa this
@@ -556,7 +556,7 @@ html
       span.hl.str &apos;jsdom&apos;
       span.hl.opt );
       span.hl.opt }
-      | Parser
+      |   Parser
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -616,7 +616,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options 
+      |       options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa this
@@ -661,7 +661,7 @@ html
       span.hl.str &apos;, &apos;
       span.hl.opt ;
       span.hl.opt }
-      | Writer
+      |   Writer
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -676,7 +676,7 @@ html
       span.hl.opt ,
       |  result
       span.hl.opt ;
-      | result 
+      |     result 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -697,7 +697,7 @@ html
       span.hl.opt .
       | id
       span.hl.opt ) {
-      | result 
+      |       result 
       span.hl.opt +=
       span.hl.str &apos;#&apos;
       span.hl.opt +
@@ -724,7 +724,7 @@ html
       span.hl.opt &amp;gt;
       span.hl.num 0
       span.hl.opt ) {
-      | classes 
+      |       classes 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -757,7 +757,7 @@ html
       span.hl.num 0
       span.hl.opt ;
       span.hl.opt });
-      | result 
+      |       result 
       span.hl.opt +=
       span.hl.str &apos;.&apos;
       span.hl.opt +
@@ -776,7 +776,7 @@ html
       span.hl.opt ===
       span.hl.num 0
       span.hl.opt ) {
-      | result 
+      |       result 
       span.hl.opt =
       span.hl.str &apos;div&apos;
       span.hl.opt ;
@@ -785,7 +785,7 @@ html
       |  result
       span.hl.opt ;
       span.hl.opt };
-      | Writer
+      |   Writer
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -808,7 +808,7 @@ html
       span.hl.opt ,
       |  _len
       span.hl.opt ;
-      | attrs 
+      |     attrs 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -828,7 +828,7 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | result 
+      |       result 
       span.hl.opt = [];
       span.hl.kwa for
       span.hl.opt (
@@ -848,7 +848,7 @@ html
       span.hl.opt ;
       |  _i
       span.hl.opt ++) {
-      | attr 
+      |         attr 
       span.hl.opt =
       |  attrs
       span.hl.kwc [_i]
@@ -881,7 +881,7 @@ html
       span.hl.opt !=
       span.hl.kwa null
       span.hl.opt )) {
-      | result
+      |             result
       span.hl.opt .
       span.hl.kwd push
       span.hl.opt (
@@ -1203,7 +1203,7 @@ html
       span.hl.opt ) !== -
       span.hl.num 1
       span.hl.opt ) {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -1213,11 +1213,11 @@ html
       span.hl.opt +
       span.hl.str &apos;.&apos;
       span.hl.opt );
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd enter
       span.hl.opt ();
-      | firstline 
+      |       firstline 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -1244,7 +1244,7 @@ html
       span.hl.opt ===
       span.hl.num 3
       span.hl.opt ) {
-      | data 
+      |           data 
       span.hl.opt =
       |  child
       span.hl.opt .
@@ -1280,7 +1280,7 @@ html
       span.hl.opt /) ===
       span.hl.num 0
       span.hl.opt ) {
-      | data 
+      |                 data 
       span.hl.opt =
       |  data
       span.hl.opt .
@@ -1295,7 +1295,7 @@ html
       span.hl.str &apos;&apos;
       span.hl.opt );
       span.hl.opt }
-      | data 
+      |               data 
       span.hl.opt =
       span.hl.str &apos;
       span.hl.esc \\\\
@@ -1303,12 +1303,12 @@ html
       span.hl.opt +
       |  data
       span.hl.opt ;
-      | firstline 
+      |               firstline 
       span.hl.opt =
       span.hl.kwa false
       span.hl.opt ;
       span.hl.opt }
-      | data 
+      |             data 
       span.hl.opt =
       |  data
       span.hl.opt .
@@ -1322,7 +1322,7 @@ html
       span.hl.esc \\\\
       span.hl.str t&apos;
       span.hl.opt );
-      | data 
+      |             data 
       span.hl.opt =
       |  data
       span.hl.opt .
@@ -1354,7 +1354,7 @@ html
       span.hl.opt }
       span.hl.opt }
       span.hl.opt });
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt ();
@@ -1384,7 +1384,7 @@ html
       span.hl.opt ) ===
       span.hl.str &apos;=&apos;
       span.hl.opt ) {
-      | tagText 
+      |         tagText 
       span.hl.opt =
       span.hl.str &apos;
       span.hl.esc \\\\
@@ -1409,7 +1409,7 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -1427,7 +1427,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1452,7 +1452,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -1461,7 +1461,7 @@ html
       span.hl.opt (
       | indent
       span.hl.opt ) {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd enter
       span.hl.opt ();
@@ -1481,7 +1481,7 @@ html
       span.hl.kwa var
       |  nodeType
       span.hl.opt ;
-      | nodeType 
+      |       nodeType 
       span.hl.opt =
       |  child
       span.hl.opt .
@@ -1574,7 +1574,7 @@ html
       span.hl.opt ();
       span.hl.opt }
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1592,7 +1592,7 @@ html
       span.hl.opt ,
       |  wrap
       span.hl.opt ) {
-      | node
+      |     node
       span.hl.opt .
       span.hl.kwd normalize
       span.hl.opt ();
@@ -1613,7 +1613,7 @@ html
       |  wrap
       span.hl.opt );
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1632,11 +1632,11 @@ html
       span.hl.opt ,
       |  lines
       span.hl.opt ,
-      | _this 
+      |       _this 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt ;
-      | condition 
+      |     condition 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -1659,7 +1659,7 @@ html
       span.hl.opt (!
       | condition
       span.hl.opt ) {
-      | data 
+      |       data 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -1697,17 +1697,17 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output
+      |         output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
       span.hl.str &apos;//&apos;
       span.hl.opt );
-      | output
+      |         output
       span.hl.opt .
       span.hl.kwd enter
       span.hl.opt ();
-      | lines 
+      |         lines 
       span.hl.opt =
       |  data
       span.hl.opt .
@@ -1717,7 +1717,7 @@ html
       | |
       span.hl.esc \\n
       span.hl.opt /);
-      | lines
+      |         lines
       span.hl.opt .
       span.hl.kwd forEach
       span.hl.opt (
@@ -1765,7 +1765,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1784,7 +1784,7 @@ html
       span.hl.opt ,
       |  innerHTML
       span.hl.opt ;
-      | innerHTML 
+      |     innerHTML 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -1825,7 +1825,7 @@ html
       span.hl.opt ) ===
       span.hl.num 0
       span.hl.opt ) {
-      | condition 
+      |       condition 
       span.hl.opt =
       span.hl.str &amp;quot; [&amp;quot;
       span.hl.opt +
@@ -1833,12 +1833,12 @@ html
       span.hl.opt +
       span.hl.str &amp;quot;] &amp;lt;!&amp;quot;
       span.hl.opt ;
-      | innerHTML 
+      |       innerHTML 
       span.hl.opt =
       span.hl.kwa null
       span.hl.opt ;
       span.hl.opt }
-      | conditionalElem 
+      |     conditionalElem 
       span.hl.opt =
       |  node
       span.hl.opt .
@@ -1848,7 +1848,7 @@ html
       span.hl.opt (
       span.hl.str &apos;conditional&apos;
       span.hl.opt );
-      | conditionalElem
+      |     conditionalElem
       span.hl.opt .
       span.hl.kwd setAttribute
       span.hl.opt (
@@ -1860,7 +1860,7 @@ html
       span.hl.opt (
       | innerHTML
       span.hl.opt ) {
-      | conditionalElem
+      |       conditionalElem
       span.hl.opt .
       | innerHTML 
       span.hl.opt =
@@ -1881,7 +1881,7 @@ html
       | nextSibling
       span.hl.opt );
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1903,7 +1903,7 @@ html
       span.hl.opt .
       | scalate
       span.hl.opt ) {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -1928,7 +1928,7 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -1958,7 +1958,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | Converter
+      |   Converter
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -1980,7 +1980,7 @@ html
       span.hl.opt .
       | scalate
       span.hl.opt ) {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -2005,7 +2005,7 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output
+      |       output
       span.hl.opt .
       span.hl.kwd writeln
       span.hl.opt (
@@ -2051,7 +2051,7 @@ html
       span.hl.str &apos;&apos;
       span.hl.opt ;
       span.hl.opt }
-      | Output
+      |   Output
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2066,7 +2066,7 @@ html
       span.hl.str &apos;  &apos;
       span.hl.opt ;
       span.hl.opt };
-      | Output
+      |   Output
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2087,7 +2087,7 @@ html
       span.hl.num 2
       span.hl.opt );
       span.hl.opt };
-      | Output
+      |   Output
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2105,13 +2105,13 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
       span.hl.opt }
       span.hl.opt };
-      | Output
+      |   Output
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2129,7 +2129,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2154,7 +2154,7 @@ html
       span.hl.kwa function
       span.hl.kwd StringOutput
       span.hl.opt () {
-      | StringOutput
+      |     StringOutput
       span.hl.opt .
       | __super__
       span.hl.opt .
@@ -2171,7 +2171,7 @@ html
       | fragments 
       span.hl.opt = [];
       span.hl.opt }
-      | StringOutput
+      |   StringOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2189,7 +2189,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2200,7 +2200,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data 
+      |       data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2234,7 +2234,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | StringOutput
+      |   StringOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2252,7 +2252,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2263,7 +2263,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data 
+      |       data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2305,7 +2305,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | StringOutput
+      |   StringOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2316,7 +2316,7 @@ html
       span.hl.kwa var
       |  result
       span.hl.opt ;
-      | result 
+      |     result 
       span.hl.opt =
       span.hl.kwa this
       span.hl.opt .
@@ -2363,7 +2363,7 @@ html
       span.hl.opt =
       |  stream
       span.hl.opt ;
-      | StreamOutput
+      |     StreamOutput
       span.hl.opt .
       | __super__
       span.hl.opt .
@@ -2376,7 +2376,7 @@ html
       |  arguments
       span.hl.opt );
       span.hl.opt }
-      | StreamOutput
+      |   StreamOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2394,7 +2394,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2405,7 +2405,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data 
+      |       data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2439,7 +2439,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
-      | StreamOutput
+      |   StreamOutput
       span.hl.opt .
       span.hl.kwa prototype
       span.hl.opt .
@@ -2457,7 +2457,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | indent 
+      |       indent 
       span.hl.opt =
       span.hl.kwa true
       span.hl.opt ;
@@ -2468,7 +2468,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | data 
+      |       data 
       span.hl.opt =
       span.hl.str &apos;&apos;
       span.hl.opt ;
@@ -2551,19 +2551,19 @@ html
       span.hl.opt !==
       span.hl.kwa null
       span.hl.opt ) {
-      | scope
+      |   scope
       span.hl.opt .
       | Parser 
       span.hl.opt =
       |  Parser
       span.hl.opt ;
-      | scope
+      |   scope
       span.hl.opt .
       | StreamOutput 
       span.hl.opt =
       |  StreamOutput
       span.hl.opt ;
-      | scope
+      |   scope
       span.hl.opt .
       | convert 
       span.hl.opt =
@@ -2584,7 +2584,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options 
+      |       options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa if
@@ -2597,7 +2597,7 @@ html
       span.hl.opt ) ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      |       options
       span.hl.opt .
       | parser 
       span.hl.opt =
@@ -2649,7 +2649,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | output 
+      |           output 
       span.hl.opt =
       span.hl.kwa new
       span.hl.kwd StreamOutput
@@ -2669,7 +2669,7 @@ html
       span.hl.opt ) ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      |           options
       span.hl.opt .
       | converter 
       span.hl.opt =
@@ -2717,7 +2717,7 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options 
+      |     options 
       span.hl.opt = {};
       span.hl.opt }
       span.hl.kwa if
@@ -2730,7 +2730,7 @@ html
       span.hl.opt ) ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      |     options
       span.hl.opt .
       | parser 
       span.hl.opt =
@@ -2780,7 +2780,7 @@ html
       span.hl.opt }
       span.hl.kwa else
       span.hl.opt {
-      | output 
+      |       output 
       span.hl.opt = (
       | _ref2 
       span.hl.opt =
@@ -2804,7 +2804,7 @@ html
       span.hl.opt ) ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      |         options
       span.hl.opt .
       | converter 
       span.hl.opt =
@@ -2814,7 +2814,7 @@ html
       | options
       span.hl.opt );
       span.hl.opt }
-      | options
+      |       options
       span.hl.opt .
       | converter
       span.hl.opt .
@@ -2870,10 +2870,10 @@ html
       span.hl.opt ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options 
+      |     options 
       span.hl.opt = {};
       span.hl.opt }
-      | output 
+      |   output 
       span.hl.opt = (
       | _ref1 
       span.hl.opt =
@@ -2897,7 +2897,7 @@ html
       span.hl.opt ) ==
       span.hl.kwa null
       span.hl.opt ) {
-      | options
+      |     options
       span.hl.opt .
       | converter 
       span.hl.opt =
@@ -2907,7 +2907,7 @@ html
       | options
       span.hl.opt );
       span.hl.opt }
-      | options
+      |   options
       span.hl.opt .
       | converter
       span.hl.opt .
@@ -3022,24 +3022,31 @@ exports[`parser html: should convert remain-white-space.html to match snapshot 1
 "html
   body
     p
-      | abc 
+      |  abc1 
       em def
-      |  ghi 
+      |              ghi13 
       em jk
     p
       | p-parent
       span
-        | span 1
+        | span_1
         span.textcolor  nest span有空格 
-        | 後面的字
+        |   後面的字0
         span
-          | text
-          | nest 1
+          |   text2 
+          |   nest2
+          |   span2
           span
-            | nest2
+            |   nest2
         p
-          | p-top
-          | p-down
+          |   p-top2
+          | p-down-space-0.  
+          |  p-down-space-1.  
+          | p-down-space-0 
+          |   p-down-space-2 
+          |     p-down-space-4 
+          |                                   p-down-space-34 
+          | p-down-space-(-1)=0
 "
 `;
 
@@ -3323,17 +3330,17 @@ exports[`parser vue: should convert pfft.html to match snapshot 1`] = `
 exports[`parser vue: should convert remain-white-space.html to match snapshot 1`] = `
 "html
   body
-    p abc
+    p abc1
       em def
-      | ghi
+      | ghi13
       em jk
     p p-parent
-      span span 1
+      span span_1
         span.textcolor nest span有空格
-        | 後面的字
-        span text nest 1
+        | 後面的字0
+        span text2 nest2 span2
           span nest2
-        p p-top p-down
+        p p-top2 p-down-space-0. p-down-space-1. p-down-space-0 p-down-space-2 p-down-space-4 p-down-space-34 p-down-space-(-1)=0
 "
 `;
 
