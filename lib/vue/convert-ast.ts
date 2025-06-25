@@ -62,10 +62,12 @@ export const parseAttrs = (
     };
   });
 
-export const parseText = (child: TextNode): Text => ({
-  node: Node.Text,
-  value: child.content.trim(),
-});
+export const parseText = (child: TextNode): Text => {
+  return {
+    node: Node.Text,
+    value: child.loc.source,
+  }
+};
 export const parseComment = (child: CommentNode): Comment => ({
   node: Node.Comment,
   value: child.content.trim(),

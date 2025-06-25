@@ -3213,7 +3213,9 @@ exports[`parser vue: should convert code-inline.html to match snapshot 1`] = `
 exports[`parser vue: should convert code-multiline.html to match snapshot 1`] = `
 "html
   body
-    code blah blah
+    code
+      | blah
+      | blah
 "
 `;
 
@@ -3237,7 +3239,10 @@ exports[`parser vue: should convert conditional.html to match snapshot 1`] = `
     script.
       //<![CDATA[
       //]]>
-    | Hello World. blah blah blah
+    |     Hello World.
+    |     blah
+    |     blah
+    |     blah
 "
 `;
 
@@ -3245,17 +3250,19 @@ exports[`parser vue: should convert empty-class.html to match snapshot 1`] = `
 "html
   head
   body(class="")
-    code blah blah
+    code
+      |     blah
+      |     blah
 "
 `;
 
 exports[`parser vue: should convert entity.html to match snapshot 1`] = `
 "html
   body
-    p Note the lack of the
-      code <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    p Note the lack of the 
+      code &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
-    p © Company 2013
+    p &copy; Company 2013
 "
 `;
 
@@ -3330,17 +3337,32 @@ exports[`parser vue: should convert pfft.html to match snapshot 1`] = `
 exports[`parser vue: should convert remain-white-space.html to match snapshot 1`] = `
 "html
   body
-    p abc1
+    p
+      |  abc1 
       em def
-      | ghi13
+      |              ghi13 
       em jk
-    p p-parent
-      span span_1
-        span.textcolor nest span有空格
-        | 後面的字0
-        span text2 nest2 span2
-          span nest2
-        p p-top2 p-down-space-0. p-down-space-1. p-down-space-0 p-down-space-2 p-down-space-4 p-down-space-34 p-down-space-(-1)=0
+    p
+      | p-parent
+      span
+        | span_1
+        span.textcolor  nest span有空格 
+        |   後面的字0
+        span
+          |   text2 
+          |   nest2
+          |   span2
+          span
+            |   nest2
+        p
+          |   p-top2
+          | p-down-space-0.  
+          |  p-down-space-1.  
+          | p-down-space-0 
+          |   p-down-space-2 
+          |     p-down-space-4 
+          |                                   p-down-space-34 
+          | p-down-space-(-1)=0
 "
 `;
 
@@ -3354,7 +3376,8 @@ exports[`parser vue: should convert single-quotes.html to match snapshot 1`] = `
 exports[`parser vue: should convert textarea-javascript.html to match snapshot 1`] = `
 "html
   body
-    textarea#text-area javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
+    textarea#text-area
+      | javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
 "
 `;
 
@@ -3379,16 +3402,16 @@ exports[`parser vue: should convert vue.vue.html to match snapshot 1`] = `
 exports[`parser vue: should convert whitespace.html to match snapshot 1`] = `
 "html
   body
-    p Here is a
+    p Here is a 
       a(href="#") link
-      | with whitespaces around it
+      |  with whitespaces around it
 "
 `;
 
 exports[`parser vue: should convert whitespace2.html to match snapshot 1`] = `
 "html
   body
-    p Hey there,
+    p Hey there, 
       a(href="#") html2jade
 
       strong is awesome
