@@ -54,7 +54,7 @@ const compileText = (
   const indent = getIndent(options);
   const resultTextMap = resultTextFilter.map((str, index) => {
     const strSpaces = str.match(/^(\s*)/)[0] ?? "";
-    let spaceCount = strSpaces.length - (options.level -2) * 2;
+    let spaceCount = strSpaces.length - (options.level - (options.bodyLess ? 0 : 2)) * 2;
     if (spaceCount < 0) {
       spaceCount = 0;
     }
