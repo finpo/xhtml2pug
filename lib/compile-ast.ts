@@ -52,12 +52,12 @@ const compileText = (node: Text, options: CompileOptions) => {
   const resultTextMap = resultTextFilter.map((str, index) => {
     
     // 計算實際輸入的空白(扣掉本身層級的縮排)
-    const strSpaces = str.match(/^(\s*)/)[0] ?? "";
-    let spaceCount = strSpaces.length - (options.level - (options.bodyLess ? 0 : 2)) * 2;
-    if (spaceCount < 0) {
-      spaceCount = 0;
-    }
     if ((node.value?.startsWith('\n') && str.length > 2) || (!node.value?.startsWith('\n') && index > 0)) {
+      const strSpaces = str.match(/^(\s*)/)[0] ?? "";
+      let spaceCount = strSpaces.length - (options.level - (options.bodyLess ? 0 : 2)) * 2;
+      if (spaceCount < 0) {
+        spaceCount = 0;
+      }
       str = " ".repeat(spaceCount) + str.trimStart();
     }
     
