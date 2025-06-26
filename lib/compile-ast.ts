@@ -43,27 +43,26 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
 const compileText = (node: Text, options: CompileOptions) => {
-  const resultTextFilter = node.value
+  const indent = getIndent(options);
+
+  const resultText = node.value
     .split("\n")
     .filter(Boolean)
-    .filter((str) => str.trim() !== "");
-    
-  const indent = getIndent(options);
-  const resultTextMap = resultTextFilter.map((str, index) => {
-    
-    // 計算實際輸入的空白(扣掉本身層級的縮排)
-    if ((node.value?.startsWith('\n') && str.length > 2) || (!node.value?.startsWith('\n') && index > 0)) {
-      const strSpaces = str.match(/^(\s*)/)[0] ?? "";
-      let spaceCount = strSpaces.length - (options.level - (options.bodyLess ? 0 : 2)) * 2;
-      if (spaceCount < 0) {
-        spaceCount = 0;
+    .filter((str) => str.trim() !== "")
+    .map((str, index) => {
+      // 計算實際輸入的空白(扣掉本身層級的縮排)
+      if ((node.value?.startsWith('\n') && str.length > 2) || (!node.value?.startsWith('\n') && index > 0)) {
+        const strSpaces = str.match(/^(\s*)/)[0] ?? "";
+        let spaceCount = strSpaces.length - (options.level - (options.bodyLess ? 0 : 2)) * 2;
+        if (spaceCount < 0) {
+          spaceCount = 0;
+        }
+        str = " ".repeat(spaceCount) + str.trimStart();
       }
-      str = " ".repeat(spaceCount) + str.trimStart();
-    }
-    
-    return `${indent}| ${str}`;
-  });
-  const resultText = resultTextMap.join("\n");
+      return `${indent}| ${str}`;
+    })
+    .join("\n");
+
   return options.encode ? encode(resultText) : resultText;
 };
 
