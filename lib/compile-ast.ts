@@ -44,7 +44,6 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
 
 const compileText = (node: Text, options: CompileOptions) => {
   const indent = getIndent(options);
-
   const resultText = node.value
     .split("\n")
     .filter(Boolean)
@@ -62,7 +61,6 @@ const compileText = (node: Text, options: CompileOptions) => {
       return `${indent}| ${str}`;
     })
     .join("\n");
-
   return options.encode ? encode(resultText) : resultText;
 };
 
