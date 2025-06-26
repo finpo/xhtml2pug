@@ -43,7 +43,6 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
 const compileText = (node: Text, options: CompileOptions) => {
-  const indent = getIndent(options);
   const resultText = node.value
     .split("\n")
     .filter(Boolean)
@@ -58,7 +57,7 @@ const compileText = (node: Text, options: CompileOptions) => {
         }
         str = " ".repeat(spaceCount) + str.trimStart();
       }
-      return `${indent}| ${str}`;
+      return `${getIndent(options)}| ${str}`;
     })
     .join("\n");
   return options.encode ? encode(resultText) : resultText;
