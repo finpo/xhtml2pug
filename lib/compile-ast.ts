@@ -83,7 +83,7 @@ const compileComment = (node: Comment, options: CompileOptions) => {
       .split("\n")
       .map(
         (str) =>
-          `${getIndent({ ...options, level: options.level + 1 })}${str.trim()}`,
+          `${getIndent({ ...options, level: options.level + 1 })}${str.trim()}`
       )
       .join("\n")
   );
@@ -91,7 +91,7 @@ const compileComment = (node: Comment, options: CompileOptions) => {
 
 const compileScript = (node: Script, options: CompileOptions) =>
   `${getIndent(options)}script${wrapAttrs(
-    compileAttrs(node.attrs, options),
+    compileAttrs(node.attrs, options)
   )}${wrapPreformattedText(node.value, {
     ...options,
     level: options.level + 1,
@@ -99,7 +99,7 @@ const compileScript = (node: Script, options: CompileOptions) =>
 
 const compileStyle = (node: Style, options: CompileOptions) =>
   `${getIndent(options)}style${wrapAttrs(
-    compileAttrs(node.attrs, options),
+    compileAttrs(node.attrs, options)
   )}${wrapPreformattedText(node.value, {
     ...options,
     level: options.level + 1,
@@ -170,7 +170,7 @@ export function compileAst(
         case Node.Tag:
           return acc.concat(
             compileTag(node, newOptions),
-            ...deepCompile(getNodesWithoutText(node.children), level + 1),
+            ...deepCompile(getNodesWithoutText(node.children), level + 1)
           );
         default:
           return acc;

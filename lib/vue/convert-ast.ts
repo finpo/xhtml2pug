@@ -105,7 +105,6 @@ const parseInterpolation = (child: InterpolationNode): Text => ({
   value: child.loc.source,
 });
 
-// vue的部分待修改
 export function convertVueAst(ast: RootNode): Nodes[] {
   const deepConvert = (children: TemplateChildNode[]): Nodes[] =>
     children.reduce<Nodes[]>((acc, child) => {
