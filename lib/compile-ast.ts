@@ -108,7 +108,6 @@ const compileStyle = (node: Style, options: CompileOptions) =>
 const compileTag = (
   node: Tag,
   options: CompileOptions,
-  htmlOfLines: string[] = [],
 ) => {
   const { attrs, className, id } = formatAttrsForTag(node.attrs, options);
 
@@ -153,7 +152,6 @@ const compileTag = (
 export function compileAst(
   ast: Nodes[],
   options: ConvertOptions,
-  htmlOfLines: string[] = [],
 ): string {
   const deepCompile = (ast: Nodes[], level = 0): string[] =>
     ast.reduce<string[]>((acc, node) => {
@@ -171,7 +169,7 @@ export function compileAst(
           return acc.concat(compileComment(node, newOptions));
         case Node.Tag:
           return acc.concat(
-            compileTag(node, newOptions, htmlOfLines),
+            compileTag(node, newOptions),
             ...deepCompile(getNodesWithoutText(node.children), level + 1),
           );
         default:
