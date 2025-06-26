@@ -42,10 +42,7 @@ const wrapPreformattedText = (str: string, options: IndentOptions) =>
 const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
-const compileText = (
-  node: Text,
-  options: CompileOptions,
-) => {
+const compileText = (node: Text, options: CompileOptions) => {
   const resultTextFilter = node.value
     .split("\n")
     .filter(Boolean)
@@ -105,10 +102,7 @@ const compileStyle = (node: Style, options: CompileOptions) =>
     level: options.level + 1,
   })}`;
 
-const compileTag = (
-  node: Tag,
-  options: CompileOptions,
-) => {
+const compileTag = (node: Tag, options: CompileOptions) => {
   const { attrs, className, id } = formatAttrsForTag(node.attrs, options);
 
   let tag = "";
@@ -137,22 +131,12 @@ const compileTag = (
   const textNode = getFirstText(node.children);
   if (!textNode) return tag;
   const resultText = textNode.value.includes("\n")
-    ? "\n" +
-      compileText(
-        textNode,
-        {
-          ...options,
-          level: options.level + 1,
-        },
-      )
+    ? "\n" + compileText(textNode, { ...options, level: options.level + 1 })
     : " " + compileSingleLineText(textNode, options);
   return `${tag}${resultText}`;
 };
 
-export function compileAst(
-  ast: Nodes[],
-  options: ConvertOptions,
-): string {
+export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   const deepCompile = (ast: Nodes[], level = 0): string[] =>
     ast.reduce<string[]>((acc, node) => {
       const newOptions = { level, ...options };
