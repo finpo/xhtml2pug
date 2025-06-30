@@ -47,6 +47,7 @@ const compileText = (node: Text, options: CompileOptions) => {
   if (options.preserveWhitespace) {
     resultText = node.value
       .split("\n")
+      .filter(Boolean)
       .filter((str) => str.trim() !== "")
       .map((str) => `${getIndent(options)}| ${str}`)
       .join("\n");
