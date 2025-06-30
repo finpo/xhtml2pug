@@ -3181,9 +3181,7 @@ exports[`parser vue: should convert code-inline.html to match snapshot 1`] = `
 exports[`parser vue: should convert code-multiline.html to match snapshot 1`] = `
 "html
   body
-    code
-      | blah
-      | blah
+    code blah blah
 "
 `;
 
@@ -3207,10 +3205,7 @@ exports[`parser vue: should convert conditional.html to match snapshot 1`] = `
     script.
       //<![CDATA[
       //]]>
-    | Hello World.
-    | blah
-    | blah
-    | blah
+    | Hello World. blah blah blah
 "
 `;
 
@@ -3218,19 +3213,17 @@ exports[`parser vue: should convert empty-class.html to match snapshot 1`] = `
 "html
   head
   body(class="")
-    code
-      | blah
-      | blah
+    code blah blah
 "
 `;
 
 exports[`parser vue: should convert entity.html to match snapshot 1`] = `
 "html
   body
-    p Note the lack of the 
-      code &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    p Note the lack of the
+      code <meta name="viewport" content="width=device-width, initial-scale=1.0">
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
-    p &copy; Company 2013
+    p © Company 2013
 "
 `;
 
@@ -3312,8 +3305,7 @@ exports[`parser vue: should convert single-quotes.html to match snapshot 1`] = `
 exports[`parser vue: should convert textarea-javascript.html to match snapshot 1`] = `
 "html
   body
-    textarea#text-area
-      | javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
+    textarea#text-area javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
 "
 `;
 
@@ -3338,7 +3330,7 @@ exports[`parser vue: should convert vue.vue.html to match snapshot 1`] = `
 exports[`parser vue: should convert whitespace.html to match snapshot 1`] = `
 "html
   body
-    p Here is a 
+    p Here is a
       a(href="#") link
       | with whitespaces around it
 "
@@ -3347,7 +3339,7 @@ exports[`parser vue: should convert whitespace.html to match snapshot 1`] = `
 exports[`parser vue: should convert whitespace2.html to match snapshot 1`] = `
 "html
   body
-    p Hey there, 
+    p Hey there,
       a(href="#") html2jade
 
       strong is awesome
