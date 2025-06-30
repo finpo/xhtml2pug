@@ -65,6 +65,8 @@ export interface PublicOptions {
   parser: "html" | "vue";
   /** Place all classes after attributes */
   classesAtEnd: boolean;
+  /** Preserve whitespaces and indentation in text nodes */
+  preserveWhitespace: boolean;
 }
 
 export interface ConvertOptions {
@@ -76,6 +78,7 @@ export interface ConvertOptions {
   symbol: string;
   parser: "html" | "vue";
   classesAtEnd: boolean;
+  preserveWhitespace: boolean;
 }
 
 export interface IndentOptions {

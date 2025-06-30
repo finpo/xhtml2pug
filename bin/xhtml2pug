@@ -63,6 +63,12 @@ async function init() {
       type: "string",
       desc: "html for any standard html, vue for any vue-like html",
     })
+    .option("preserveWhitespace", {
+      alias: "w",
+      default: false,
+      desc: "Preserve whitespaces and indentation in text nodes",
+      type: "boolean"
+    })
     .command("$0")
     .example("$0 -s 4 < index.html", "write to stdout")
     .example("$0 -s 4 < index.html > index.pug", "write to file")
@@ -84,6 +90,7 @@ async function init() {
     parser,
     spaces,
     tabs,
+    preserveWhitespace,
   } = yargs.argv;
   const options = {
     attrComma,
@@ -94,6 +101,7 @@ async function init() {
     symbol: tabs ? "\t" : " ".repeat(spaces),
     parser,
     classesAtEnd,
+    preserveWhitespace,
   };
 
   try {

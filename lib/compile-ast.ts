@@ -44,10 +44,12 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
 
 const compileText = (node: Text, options: CompileOptions) => {
   const resultText = node.value
-    .trimEnd()
     .split("\n")
     .filter(Boolean)
-    .map((str) => `${getIndent(options)}| ${str.trimStart()}`)
+    .filter((str) => str.trim() !== "")
+    .map((str) => {
+      return `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trimStart().trimEnd()}`;
+    })
     .join("\n");
   return options.encode ? encode(resultText) : resultText;
 };
@@ -121,7 +123,7 @@ const compileTag = (node: Tag, options: CompileOptions) => {
   const resultText = textNode.value.includes("\n")
     ? "\n" + compileText(textNode, { ...options, level: options.level + 1 })
     : " " + compileSingleLineText(textNode, options);
-  return `${tag}${resultText}`;
+  return `${tag}${options.preserveWhitespace ? `${tag}${resultText}` : resultText.trimEnd()}`;
 };
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
