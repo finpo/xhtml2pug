@@ -16,6 +16,7 @@ const setupDefaultOptions = ({
   symbol: "  ",
   parser: "html",
   classesAtEnd: false,
+  preserveWhitespace: false,
   ...options,
 });
 
@@ -23,7 +24,7 @@ export function convert(html: string, options: Partial<PublicOptions> = {}) {
   const definedOptions = setupDefaultOptions(options);
 
   const convertedAst =
-    definedOptions.parser === "html" ? buildHtmlAst(html) : buildVueAst(html);
+    definedOptions.parser === "html" ? buildHtmlAst(html) : buildVueAst(html, definedOptions);
 
   return compileAst(
     options.bodyLess ? convertedAst : wrapIntoBase(convertedAst),

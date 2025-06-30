@@ -3018,6 +3018,46 @@ html
 "
 `;
 
+exports[`parser html: should convert remain-white-space.html to match snapshot 1`] = `
+"html
+  body
+    p    abc1 
+      em def
+      |              ghi13 
+      em jk
+    h1
+      |      15165
+    p
+      span
+        span.textcolor  nest span有空格 
+        |       後面的字0
+        h3
+          |         text2 
+          |         nest2
+          |         span2
+          span
+            |           nest2
+          |      後面的字2
+          span
+            |         nest3
+        |     span_222
+        h2
+          |        m 
+        p
+          |          testtt
+        |     span_333
+        p
+          |          p-top9
+          |        p-down-space-7.  
+          |         p-down-space-8.  
+          |        p-down-space-7 
+          |          p-down-space-9 
+          |            p-down-space-11 
+          |                                          p-down-space-41 
+          |        p-down-space-(-1)=0
+"
+`;
+
 exports[`parser html: should convert single-quotes.html to match snapshot 1`] = `
 "html
   body
@@ -3292,6 +3332,46 @@ exports[`parser vue: should convert pfft.html to match snapshot 1`] = `
 "html
   body
     p ffft
+"
+`;
+
+exports[`parser vue: should convert remain-white-space.html to match snapshot 1`] = `
+"html
+  body
+    p    abc1 
+      em def
+      |              ghi13 
+      em jk
+    h1
+      |      15165
+    p
+      span
+        span.textcolor  nest span有空格 
+        |       後面的字0
+        h3
+          |         text2 
+          |         nest2
+          |         span2
+          span
+            |           nest2
+          |      後面的字2
+          span
+            |         nest3
+        |     span_222
+        h2
+          |        m 
+        p
+          |          testtt
+        |     span_333
+        p
+          |          p-top9
+          |        p-down-space-7.  
+          |         p-down-space-8.  
+          |        p-down-space-7 
+          |          p-down-space-9 
+          |            p-down-space-11 
+          |                                          p-down-space-41 
+          |        p-down-space-(-1)=0
 "
 `;
 

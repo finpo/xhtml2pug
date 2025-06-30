@@ -98,6 +98,8 @@ const pug = convert(html, { symbol: '\t' });
                                                       [boolean] [default: false]
   -p, --parser        html for any standard html, vue for any vue-like html
                              [string] [choices: "html", "vue"] [default: "html"]
+  -w, --preserveWhitespace  Preserve whitespaces and indentation in text nodes
+                            [boolean] [default: false]
 ```
 
 ### Api Options
@@ -120,5 +122,7 @@ export interface PublicOptions {
   parser: "html" | "vue";
   /** Place all classes after attributes */
   classesAtEnd: boolean;
+  /** Preserve whitespaces and indentation in text nodes */
+  preserveWhitespace: boolean;
 }
 ```
