@@ -123,7 +123,7 @@ const compileTag = (node: Tag, options: CompileOptions) => {
   const resultText = textNode.value.includes("\n")
     ? "\n" + compileText(textNode, { ...options, level: options.level + 1 })
     : " " + compileSingleLineText(textNode, options);
-  return `${tag}${options.preserveWhitespace ? `${tag}${resultText}` : resultText.trimEnd()}`;
+  return `${tag}${resultText}`;
 };
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
