@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/finpo/xhtml2pug/compare/v5.1.3...v5.2.0) (2025-06-30)
+
+
+### Features
+
+* 保留文字間空白不被刪除  ([#31](https://github.com/finpo/xhtml2pug/issues/31)) ([1398e60](https://github.com/finpo/xhtml2pug/commit/1398e60685cb1a1d8298543548476a8c5f34c8c0))
+
 ## [5.1.3](https://github.com/finpo/xhtml2pug/compare/v5.1.2...v5.1.3) (2025-06-19)
 
 
