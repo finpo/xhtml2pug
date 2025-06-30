@@ -43,14 +43,22 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
 const compileText = (node: Text, options: CompileOptions) => {
-  const resultText = node.value
-    .split("\n")
-    .filter(Boolean)
-    .filter((str) => str.trim() !== "")
-    .map((str) => {
-      return `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trimStart().trimEnd()}`;
-    })
-    .join("\n");
+  let resultText = '';
+  if (options.preserveWhitespace) {
+    resultText = node.value
+      .split("\n")
+      .filter((str) => str.trim() !== "")
+      .map((str) => `${getIndent(options)}| ${str}`)
+      .join("\n");
+  } else {
+    resultText = node.value
+      .trimEnd()
+      .split("\n")
+      .filter(Boolean)
+      .map((str) => `${getIndent(options)}| ${str.trimStart()}`)
+      .join("\n");
+  }
+  
   return options.encode ? encode(resultText) : resultText;
 };
 

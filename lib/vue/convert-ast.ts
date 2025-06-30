@@ -10,7 +10,7 @@ import type {
 } from "@vue/compiler-dom";
 import { parse } from "@vue/compiler-dom";
 
-import type { Attr, Comment, Nodes, Script, Style, Tag, Text } from "../models";
+import type { Attr, Comment, Nodes, PublicOptions, Script, Style, Tag, Text } from "../models";
 import { Node } from "../models";
 
 const NodeTypes = {
@@ -62,9 +62,9 @@ export const parseAttrs = (
     };
   });
 
-export const parseText = (child: TextNode): Text => ({
+export const parseText = (child: TextNode, options: Partial<PublicOptions>): Text => ({
   node: Node.Text,
-  value: child.loc.source,
+  value: options.preserveWhitespace ? child.loc.source : child.content.trim(),
 });
 export const parseComment = (child: CommentNode): Comment => ({
   node: Node.Comment,
@@ -103,11 +103,11 @@ const parseInterpolation = (child: InterpolationNode): Text => ({
   value: child.loc.source,
 });
 
-export function convertVueAst(ast: RootNode): Nodes[] {
+export function convertVueAst(ast: RootNode, options: Partial<PublicOptions>): Nodes[] {
   const deepConvert = (children: TemplateChildNode[]): Nodes[] =>
     children.reduce<Nodes[]>((acc, child) => {
       if (isText(child)) {
-        return acc.concat(parseText(child));
+        return acc.concat(parseText(child, options));
       }
 
       if (isInterpolation(child)) {
@@ -139,6 +139,6 @@ export function convertVueAst(ast: RootNode): Nodes[] {
   return deepConvert(ast.children);
 }
 
-export function buildVueAst(html: string) {
-  return convertVueAst(parse(html));
+export function buildVueAst(html: string, options: Partial<PublicOptions>) {
+  return convertVueAst(parse(html), options);
 }
