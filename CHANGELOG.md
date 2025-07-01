@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.0](https://github.com/finpo/xhtml2pug/compare/v5.2.0...v5.3.0) (2025-07-01)
+
+
+### Features
+
+* 新增 unescapedAttributes 模式，用於保持從 pug 轉回 html 時屬性 escape ([#33](https://github.com/finpo/xhtml2pug/issues/33)) ([c7ab7ed](https://github.com/finpo/xhtml2pug/commit/c7ab7ed89184a36bf17a8121011f2d7b8264f2a0))
+
 ## [5.2.0](https://github.com/finpo/xhtml2pug/compare/v5.1.3...v5.2.0) (2025-06-30)
 
 
