@@ -3110,6 +3110,16 @@ exports[`parser html: should convert textarea-javascript.html to match snapshot 
 "
 `;
 
+exports[`parser html: should convert unescaped-attributes.html to match snapshot 1`] = `
+"html
+  body
+    p(title!="Tom & Jerry")  湯姆貓與傑利鼠
+    iframe(src!="https://www.youtube.com/watch?v=t0Q2otsqC4I")
+    img(src!="https://static.wikia.nocookie.net/cnas/images/4/4b/Tom_and_Jerry_Title_Card_%28Variant_1%29.png/revision/latest?cb=20221115031859")
+    a(href!="https://zh.wikipedia.org/zh-tw/猫和老鼠") link
+"
+`;
+
 exports[`parser html: should convert whitespace.html to match snapshot 1`] = `
 "html
   body
@@ -3386,6 +3396,16 @@ exports[`parser vue: should convert textarea-javascript.html to match snapshot 1
 "html
   body
     textarea#text-area javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
+"
+`;
+
+exports[`parser vue: should convert unescaped-attributes.html to match snapshot 1`] = `
+"html
+  body
+    p(title!="Tom & Jerry") 湯姆貓與傑利鼠
+    iframe(src!="https://www.youtube.com/watch?v=t0Q2otsqC4I")
+    img(src!="https://static.wikia.nocookie.net/cnas/images/4/4b/Tom_and_Jerry_Title_Card_%28Variant_1%29.png/revision/latest?cb=20221115031859")
+    a(href!="https://zh.wikipedia.org/zh-tw/猫和老鼠") link
 "
 `;
 

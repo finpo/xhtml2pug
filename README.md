@@ -100,6 +100,8 @@ const pug = convert(html, { symbol: '\t' });
                              [string] [choices: "html", "vue"] [default: "html"]
   -w, --preserveWhitespace  Preserve whitespaces and indentation in text nodes
                             [boolean] [default: false]
+  -u, --unescapedAttributes Output attributes in unescaped (!=) format
+                            [boolean] [default: false]
 ```
 
 ### Api Options
@@ -124,5 +126,7 @@ export interface PublicOptions {
   classesAtEnd: boolean;
   /** Preserve whitespaces and indentation in text nodes */
   preserveWhitespace: boolean;
+  /** Output attributes in unescaped (!=) format */
+  unescapedAttributes: boolean; 
 }
 ```
