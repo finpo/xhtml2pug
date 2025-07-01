@@ -69,6 +69,12 @@ async function init() {
       desc: "Preserve whitespaces and indentation in text nodes",
       type: "boolean"
     })
+    .option("unescapedAttributes", {
+      alias: "u",
+      default: false,
+      desc: "Output attributes in unescaped (!=) format",
+      type: "boolean"
+    })
     .command("$0")
     .example("$0 -s 4 < index.html", "write to stdout")
     .example("$0 -s 4 < index.html > index.pug", "write to file")
@@ -91,6 +97,7 @@ async function init() {
     spaces,
     tabs,
     preserveWhitespace,
+    unescapedAttributes,
   } = yargs.argv;
   const options = {
     attrComma,
@@ -102,6 +109,7 @@ async function init() {
     parser,
     classesAtEnd,
     preserveWhitespace,
+    unescapedAttributes,
   };
 
   try {

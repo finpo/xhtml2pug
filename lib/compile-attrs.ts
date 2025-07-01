@@ -47,6 +47,6 @@ export const compileAttrs = (attrs: Attr[], options: CompileOptions) =>
     .map(({ key, value }) =>
       [key, wrapInQuotes(value, options)]
         .filter((str) => str != null)
-        .join("=")
+        .join(`${options.unescapedAttributes ? "!=" : "="}`)
     )
     .join(options.attrSep);

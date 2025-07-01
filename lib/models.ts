@@ -67,6 +67,8 @@ export interface PublicOptions {
   classesAtEnd: boolean;
   /** Preserve whitespaces and indentation in text nodes */
   preserveWhitespace: boolean;
+  /** Output attributes in unescaped (!=) format */
+  unescapedAttributes: boolean;
 }
 
 export interface ConvertOptions {
@@ -79,6 +81,7 @@ export interface ConvertOptions {
   parser: "html" | "vue";
   classesAtEnd: boolean;
   preserveWhitespace: boolean;
+  unescapedAttributes: boolean;
 }
 
 export interface IndentOptions {
