@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`parser html: should convert add-line.html to match snapshot 1`] = `
-"html
-  body
-    textarea
-      | 
-      | 
-      | 
-    textarea
-      | text1
-      | 
-      | text2
-      | 
-      | 
-"
-`;
-
 exports[`parser html: should convert angular.html to match snapshot 1`] = `
 "html
   body
@@ -3214,6 +3198,27 @@ exports[`parser html: should convert textarea-javascript.html to match snapshot 
 "
 `;
 
+exports[`parser html: should convert textarea-with-line-break.html to match snapshot 1`] = `
+"html
+  body
+    textarea
+      | 
+      | 
+      | 
+    textarea
+      | text1
+      | 
+      | text2
+      | 
+      | 
+    textarea
+      | 
+      | text
+      | 
+      | 
+"
+`;
+
 exports[`parser html: should convert unescaped-attributes.html to match snapshot 1`] = `
 "html
   body
@@ -3256,17 +3261,6 @@ exports[`parser html: should convert without-html.html to match snapshot 1`] = `
     title Title
   body
     div Lorem ipsum dolor sit amet.
-"
-`;
-
-exports[`parser vue: should convert add-line.html to match snapshot 1`] = `
-"html
-  body
-    textarea 
-    textarea
-      | text1
-      | 
-      | text2
 "
 `;
 
@@ -3511,6 +3505,18 @@ exports[`parser vue: should convert textarea-javascript.html to match snapshot 1
 "html
   body
     textarea#text-area javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
+"
+`;
+
+exports[`parser vue: should convert textarea-with-line-break.html to match snapshot 1`] = `
+"html
+  body
+    textarea 
+    textarea
+      | text1
+      | 
+      | text2
+    textarea text
 "
 `;
 
