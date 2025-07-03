@@ -134,9 +134,7 @@ const compileTag = (node: Tag, options: CompileOptions) => {
     return true;
   });
   const textNode = getFirstText(node.children);
-  if (!textNode) {
-    return tag;
-  }
+  if (!textNode) return tag;
   const resultText = textNode.value.includes("\n")
     ? "\n" + compileText(textNode, { ...options, level: options.level + 1 })
     : " " + compileSingleLineText(textNode, options);
