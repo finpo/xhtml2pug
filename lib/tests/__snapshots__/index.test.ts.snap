@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`parser html: should convert add-line.html to match snapshot 1`] = `
+"html
+  body
+    textarea
+      | 
+      | 
+      | 
+    textarea
+      | text1
+      | 
+      | text2
+      | 
+      | 
+"
+`;
+
 exports[`parser html: should convert angular.html to match snapshot 1`] = `
 "html
   body
@@ -94,41 +110,54 @@ exports[`parser html: should convert conditional.html to match snapshot 1`] = `
     | Hello World.
     | blah
     | blah
+    | 
+    | 
+    | 
     | blah
 "
 `;
 
 exports[`parser html: should convert conditional2.html.html to match snapshot 1`] = `
 "doctype html
+| 
 // paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 // [if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]
 // [if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]
 // [if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]
 // [if gt IE 8]><!
-html.no-js(lang="en")
+html.no-js(lang="en")  
   // <![endif]
   head
     meta(charset="utf-8")
+    | 
     // Set the viewport width to device width for mobile
     meta(name="viewport", content="width=device-width")
+    | 
     title Welcome to Foundation
+    | 
     // Included CSS Files
     link(rel="stylesheet", href="test/stylesheets/styles.css")
+    | 
     script(src="vendor/assets/javascripts/foundation/modernizr.foundation.js")
+    | 
     // IE Fix for HTML5 Tags
     //
       [if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]
+    | 
   body
+    | 
     .row
       .twelve.columns
         h2 Welcome to Foundation
         p This is version 3.0.6 released on July 20, 2012.
         hr
+    | 
     .row
       .eight.columns
         h3 The Grid
+        | 
         // Grid Example
         .row
           .twelve.columns
@@ -151,6 +180,7 @@ html.no-js(lang="en")
           .four.columns
             .panel
               p Four columns
+        | 
         h3 Tabs
         dl.tabs
           dd.active
@@ -159,11 +189,14 @@ html.no-js(lang="en")
             a(href="#simple2") Simple Tab 2
           dd
             a(href="#simple3") Simple Tab 3
+        | 
         ul.tabs-content
           li#simple1Tab.active This is simple tab 1&apos;s content. Pretty neat, huh?
           li#simple2Tab This is simple tab 2&apos;s content. Now you see it!
           li#simple3Tab This is simple tab 3&apos;s content. It&apos;s, you know...okay.
+        | 
         h3 Buttons
+        | 
         .row
           .six.columns
             p
@@ -179,9 +212,11 @@ html.no-js(lang="en")
               a.success.button(href="#") Medium Success Button
             p
               a.large.secondary.button(href="#") Large Secondary Button
+      | 
       .four.columns
         h4 Getting Started
         p We&apos;re stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
+        | 
         h4 Other Resources
         p Once you&apos;ve exhausted the fun in this document, you should check out:
         ul.disc
@@ -197,6 +232,9 @@ html.no-js(lang="en")
             a(href="http://twitter.com/foundationzurb") @foundationzurb
             br
             | Ping us on Twitter if you have questions. If you build something with this we&apos;d love to see it (and send you a totally boss sticker).
+    | 
+    | 
+    | 
     // Included JS Files
     script(src="vendor/assets/javascripts/foundation/jquery.js")
     script(src="vendor/assets/javascripts/foundation/jquery.foundation.reveal.js")
@@ -211,6 +249,7 @@ html.no-js(lang="en")
     script(src="vendor/assets/javascripts/foundation/jquery.foundation.mediaQueryToggle.js")
     script(src="vendor/assets/javascripts/foundation/jquery.foundation.tabs.js")
     script(src="vendor/assets/javascripts/foundation/app.js")
+    | 
 "
 `;
 
@@ -220,7 +259,7 @@ exports[`parser html: should convert conditional3.html.html to match snapshot 1`
 // [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
 // [if IE 8]>         <html class="no-js lt-ie9"> <![endif]
 // [if gt IE 8]><!
-html.no-js
+html.no-js  
   // <![endif]
   head
     meta(charset="utf-8")
@@ -228,6 +267,7 @@ html.no-js
     title
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
+    | 
     link(rel="stylesheet", href="css/bootstrap.min.css")
     style.
       body {
@@ -236,6 +276,7 @@ html.no-js
       }
     link(rel="stylesheet", href="css/bootstrap-theme.min.css")
     link(rel="stylesheet", href="css/main.css")
+    | 
     script(src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js")
   body
     //
@@ -303,40 +344,53 @@ exports[`parser html: should convert html5boilerplate.html.html to match snapsho
 // [if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]
 // [if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]
 // [if gt IE 8]><!
-html.no-js(lang="en")
+html.no-js(lang="en")  
   // <![endif]
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    | 
     title
     meta(name="description", content="")
     meta(name="author", content="")
+    | 
     meta(name="viewport", content="width=device-width,initial-scale=1")
+    | 
     link(rel="stylesheet", href="css/style.css")
+    | 
     script(src="js/libs/modernizr-2.0.6.min.js")
   body
+    | 
     #container
       header
+        | 
       #main(role="main")
+        | 
       footer
+        | 
     // ! end of #container
+    | 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
     script.
       window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\\/script>')
+    | 
     // scripts concatenated and minified via ant build script
     script(src="js/plugins.js")
     script(src="js/script.js")
     // end scripts
+    | 
     script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+    | 
     //
       [if lt IE 7 ]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
       <![endif]
+    | 
 "
 `;
 
@@ -389,6 +443,7 @@ exports[`parser html: should convert parse-style.html to match snapshot 1`] = `
       .body {
       background: red;
       }
+    | 
     style
 "
 `;
@@ -504,6 +559,7 @@ html
       span.hl.kwa return
       | child
       span.hl.opt ; };
+      | 
       | scope
       span.hl.opt =
       span.hl.kwa typeof
@@ -529,10 +585,12 @@ html
       span.hl.opt .
       | Html2Jade
       span.hl.opt = {};
+      | 
       | Parser
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
+      | 
       span.hl.kwa function
       span.hl.kwd Parser
       span.hl.opt (
@@ -556,6 +614,7 @@ html
       span.hl.str &apos;jsdom&apos;
       span.hl.opt );
       span.hl.opt }
+      | 
       | Parser
       span.hl.opt .
       span.hl.kwa prototype
@@ -592,14 +651,18 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       span.hl.kwa return
       | Parser
       span.hl.opt ;
+      | 
       span.hl.opt })();
+      | 
       | Writer
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
+      | 
       span.hl.kwa function
       span.hl.kwd Writer
       span.hl.opt (
@@ -661,6 +724,7 @@ html
       span.hl.str &apos;, &apos;
       span.hl.opt ;
       span.hl.opt }
+      | 
       | Writer
       span.hl.opt .
       span.hl.kwa prototype
@@ -785,6 +849,7 @@ html
       | result
       span.hl.opt ;
       span.hl.opt };
+      | 
       | Writer
       span.hl.opt .
       span.hl.kwa prototype
@@ -1427,6 +1492,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -1574,6 +1640,7 @@ html
       span.hl.opt ();
       span.hl.opt }
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -1613,6 +1680,7 @@ html
       | wrap
       span.hl.opt );
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -1765,6 +1833,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -1881,6 +1950,7 @@ html
       | nextSibling
       span.hl.opt );
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -1958,6 +2028,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | Converter
       span.hl.opt .
       span.hl.kwa prototype
@@ -2033,14 +2104,18 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       span.hl.kwa return
       | Converter
       span.hl.opt ;
+      | 
       span.hl.opt })();
+      | 
       | Output
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt () {
+      | 
       span.hl.kwa function
       span.hl.kwd Output
       span.hl.opt () {
@@ -2051,6 +2126,7 @@ html
       span.hl.str &apos;&apos;
       span.hl.opt ;
       span.hl.opt }
+      | 
       | Output
       span.hl.opt .
       span.hl.kwa prototype
@@ -2066,6 +2142,7 @@ html
       span.hl.str &apos;  &apos;
       span.hl.opt ;
       span.hl.opt };
+      | 
       | Output
       span.hl.opt .
       span.hl.kwa prototype
@@ -2087,6 +2164,7 @@ html
       span.hl.num 2
       span.hl.opt );
       span.hl.opt };
+      | 
       | Output
       span.hl.opt .
       span.hl.kwa prototype
@@ -2111,6 +2189,7 @@ html
       span.hl.opt ;
       span.hl.opt }
       span.hl.opt };
+      | 
       | Output
       span.hl.opt .
       span.hl.kwa prototype
@@ -2135,22 +2214,27 @@ html
       span.hl.opt ;
       span.hl.opt }
       span.hl.opt };
+      | 
       span.hl.kwa return
       | Output
       span.hl.opt ;
+      | 
       span.hl.opt })();
+      | 
       | StringOutput
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt (
       | _super
       span.hl.opt ) {
+      | 
       span.hl.kwd __extends
       span.hl.opt (
       | StringOutput
       span.hl.opt ,
       | _super
       span.hl.opt );
+      | 
       span.hl.kwa function
       span.hl.kwd StringOutput
       span.hl.opt () {
@@ -2171,6 +2255,7 @@ html
       | fragments
       span.hl.opt = [];
       span.hl.opt }
+      | 
       | StringOutput
       span.hl.opt .
       span.hl.kwa prototype
@@ -2234,6 +2319,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | StringOutput
       span.hl.opt .
       span.hl.kwa prototype
@@ -2305,6 +2391,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | StringOutput
       span.hl.opt .
       span.hl.kwa prototype
@@ -2334,24 +2421,29 @@ html
       | result
       span.hl.opt ;
       span.hl.opt };
+      | 
       span.hl.kwa return
       | StringOutput
       span.hl.opt ;
+      | 
       span.hl.opt })(
       | Output
       span.hl.opt );
+      | 
       | StreamOutput
       span.hl.opt = (
       span.hl.kwa function
       span.hl.opt (
       | _super
       span.hl.opt ) {
+      | 
       span.hl.kwd __extends
       span.hl.opt (
       | StreamOutput
       span.hl.opt ,
       | _super
       span.hl.opt );
+      | 
       span.hl.kwa function
       span.hl.kwd StreamOutput
       span.hl.opt (
@@ -2376,6 +2468,7 @@ html
       | arguments
       span.hl.opt );
       span.hl.opt }
+      | 
       | StreamOutput
       span.hl.opt .
       span.hl.kwa prototype
@@ -2439,6 +2532,7 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       | StreamOutput
       span.hl.opt .
       span.hl.kwa prototype
@@ -2510,36 +2604,43 @@ html
       span.hl.opt );
       span.hl.opt }
       span.hl.opt };
+      | 
       span.hl.kwa return
       | StreamOutput
       span.hl.opt ;
+      | 
       span.hl.opt })(
       | Output
       span.hl.opt );
+      | 
       | scope
       span.hl.opt .
       | Output
       span.hl.opt =
       | Output
       span.hl.opt ;
+      | 
       | scope
       span.hl.opt .
       | StringOutput
       span.hl.opt =
       | StringOutput
       span.hl.opt ;
+      | 
       | scope
       span.hl.opt .
       | Converter
       span.hl.opt =
       | Converter
       span.hl.opt ;
+      | 
       | scope
       span.hl.opt .
       | Writer
       span.hl.opt =
       | Writer
       span.hl.opt ;
+      | 
       span.hl.kwa if
       span.hl.opt (
       span.hl.kwa typeof
@@ -2696,6 +2797,7 @@ html
       span.hl.opt });
       span.hl.opt };
       span.hl.opt }
+      | 
       | scope
       span.hl.opt .
       | convertHtml
@@ -2845,6 +2947,7 @@ html
       span.hl.opt }
       span.hl.opt });
       span.hl.opt };
+      | 
       | scope
       span.hl.opt .
       | convertDocument
@@ -2934,6 +3037,7 @@ html
       span.hl.opt ());
       span.hl.opt }
       span.hl.opt };
+      | 
       span.hl.opt }).
       span.hl.kwd call
       span.hl.opt (
@@ -3152,6 +3256,17 @@ exports[`parser html: should convert without-html.html to match snapshot 1`] = `
     title Title
   body
     div Lorem ipsum dolor sit amet.
+"
+`;
+
+exports[`parser vue: should convert add-line.html to match snapshot 1`] = `
+"html
+  body
+    textarea 
+    textarea
+      | text1
+      | 
+      | text2
 "
 `;
 
@@ -3441,7 +3556,6 @@ exports[`parser vue: should convert whitespace2.html to match snapshot 1`] = `
   body
     p Hey there,
       a(href="#") html2jade
-
       strong is awesome
 "
 `;
