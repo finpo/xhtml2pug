@@ -43,23 +43,22 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
 const compileText = (node: Text, options: CompileOptions) => {
-  let resultText = '';
-  if (options.preserveWhitespace) {
-    resultText = node.value
-      .split("\n")
-      .filter(Boolean)
-      .filter((str) => str.trim() !== "")
-      .map((str) => `${getIndent(options)}| ${str}`)
-      .join("\n");
-  } else {
-    resultText = node.value
-      .trimEnd()
-      .split("\n")
-      .filter(Boolean)
-      .map((str) => `${getIndent(options)}| ${str.trimStart()}`)
-      .join("\n");
-  }
-  
+  const resultText = node.value
+    .split("\n")
+    .filter((str, index, arr) => { // 最後的\n砍掉
+      if (index +1 === arr.length && !str.trim()) {
+        return false;
+      }
+      return true;
+    })
+    .filter((str, index, arr) => {
+      if (index === 0 && !str.trim() && arr.length > 1) {
+        return false;
+      }
+      return true;
+    })
+    .map((str) => `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trim()}`)
+    .join("\n");
   return options.encode ? encode(resultText) : resultText;
 };
 
@@ -126,9 +125,18 @@ const compileTag = (node: Tag, options: CompileOptions) => {
       .filter(Boolean)
       .join("");
   }
-
+  
+  // 移除文字最後的 \n
+  node.children = node.children.filter((child) => {
+    if (child.node == 2 && (/^\r\n[ \t]*$/.test(child.value) || /^\n[ \t]*$/.test(child.value))) {
+      return false;
+    }
+    return true;
+  });
   const textNode = getFirstText(node.children);
-  if (!textNode) return tag;
+  if (!textNode) {
+    return tag;
+  }
   const resultText = textNode.value.includes("\n")
     ? "\n" + compileText(textNode, { ...options, level: options.level + 1 })
     : " " + compileSingleLineText(textNode, options);
@@ -136,9 +144,46 @@ const compileTag = (node: Tag, options: CompileOptions) => {
 };
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
+  // !DOCTYPE 多 |
+  const findDocTypeElementIndex = ast.findIndex((el) => el.node === 0);
+  if (findDocTypeElementIndex !== -1) {
+    ast = ast.filter((el, index) => {
+      if (index === findDocTypeElementIndex +1 && el.node === 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))){
+        return false;
+      }
+      return true;
+    });
+  }
+  // 本身有寫html標籤且在</html>標籤後面又換行,以避免最後一行多 |
+  const findHtmlElementIndex = ast.findIndex((el) => el.node === 1 && el?.name == 'html');
+  if (findHtmlElementIndex !== -1) {
+    ast = ast.filter((el, index) => {
+      if (index === findHtmlElementIndex +1 && el.node == 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))) {
+        return false
+      }
+      return true;
+    });
+  }
+  ast = ast.filter((el, index, arr) => {
+    if (el?.node === 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))) {
+      // 移除註解下一行的 |
+      if (arr[index - 1]?.node === 5) {
+        return false;
+      }
+      // 移除html </tag> 的 \n
+      if (arr[index - 1]?.node === 1) {
+        return false;
+      }
+    }
+    return true;
+  });
   const deepCompile = (ast: Nodes[], level = 0): string[] =>
     ast.reduce<string[]>((acc, node) => {
       const newOptions = { level, ...options };
+      let text: string;
+      if (node.node === Node.Text) {
+        text = compileText(node, newOptions);
+      }
       switch (node.node) {
         case Node.Doctype:
           return acc.concat(compileDoctype(node, newOptions));
@@ -147,7 +192,7 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
         case Node.Style:
           return acc.concat(compileStyle(node, newOptions));
         case Node.Text:
-          return acc.concat(compileText(node, newOptions));
+          return text ? acc.concat(text) : acc;
         case Node.Comment:
           return acc.concat(compileComment(node, newOptions));
         case Node.Tag:

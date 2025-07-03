@@ -40,13 +40,10 @@ const parseAttrs = (attrs: TagAttribute[] = []) =>
     return { key: attr.key.content, value: attr.value?.content };
   });
 
-const parseText = (child: TextNode): Text | null =>
-  child.content.value.content.trim()
-    ? {
-        node: Node.Text,
-        value: child.content.value.content,
-      }
-    : null;
+const parseText = (child: TextNode): Text | null => ({
+  node: Node.Text,
+  value: child.content.value.content,
+});
 
 const parseComment = (child: CommentNode): Comment => ({
   node: Node.Comment,
