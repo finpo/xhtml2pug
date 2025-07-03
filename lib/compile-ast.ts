@@ -142,34 +142,28 @@ const compileTag = (node: Tag, options: CompileOptions) => {
 };
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
-  // !DOCTYPE 多 |
+  /**
+   * 檢查字串後面有沒有 \n
+   * example 'abc \n  ', '\r\n', '\n', '\n  ', '\r\n  ' => true
+   * example '\n abc', '\r\n abc','abc' => false 
+   * */
+  const checkLastStrHaveForeSlashN = (str: string) => (/^\r\n[ \t]*$/.test(str) || /^\n[ \t]*$/.test(str));
+  // 移除 !DOCTYPE後面的 \n
   const findDocTypeElementIndex = ast.findIndex((el) => el.node === 0);
   if (findDocTypeElementIndex !== -1) {
     ast = ast.filter((el, index) => {
-      if (index === findDocTypeElementIndex +1 && el.node === 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))){
+      if (index === findDocTypeElementIndex +1 && el.node === 2 && checkLastStrHaveForeSlashN(el.value)){
         return false;
-      }
-      return true;
-    });
-  }
-  // 本身有寫html標籤且在</html>標籤後面又換行,以避免最後一行多 |
-  const findHtmlElementIndex = ast.findIndex((el) => el.node === 1 && el?.name == 'html');
-  if (findHtmlElementIndex !== -1) {
-    ast = ast.filter((el, index) => {
-      if (index === findHtmlElementIndex +1 && el.node == 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))) {
-        return false
       }
       return true;
     });
   }
   ast = ast.filter((el, index, arr) => {
-    if (el?.node === 2 && (/^\r\n[ \t]*$/.test(el.value) || /^\n[ \t]*$/.test(el.value))) {
-      // 移除註解下一行的 |
-      if (arr[index - 1]?.node === 5) {
-        return false;
-      }
-      // 移除html </tag> 的 \n
-      if (arr[index - 1]?.node === 1) {
+    // node = 2, 屬於文字類型
+    if (el?.node === 2 && checkLastStrHaveForeSlashN(el.value)) {
+      // node = 1(html標籤), 移除html </tag> 的 \n
+      // node = 5(註解), 移除註解下一行的 \n
+      if ([1,5].includes(arr[index - 1]?.node)) {
         return false;
       }
     }
