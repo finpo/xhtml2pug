@@ -3340,7 +3340,9 @@ exports[`parser vue: should convert code-inline.html to match snapshot 1`] = `
 exports[`parser vue: should convert code-multiline.html to match snapshot 1`] = `
 "html
   body
-    code blah blah
+    code
+      | blah
+      | blah
 "
 `;
 
@@ -3364,7 +3366,13 @@ exports[`parser vue: should convert conditional.html to match snapshot 1`] = `
     script.
       //<![CDATA[
       //]]>
-    | Hello World. blah blah blah
+    | Hello World.
+    | blah
+    | blah
+    | 
+    | 
+    | 
+    | blah
 "
 `;
 
@@ -3372,7 +3380,9 @@ exports[`parser vue: should convert empty-class.html to match snapshot 1`] = `
 "html
   head
   body(class="")
-    code blah blah
+    code
+      | blah
+      | blah
 "
 `;
 
@@ -3504,19 +3514,29 @@ exports[`parser vue: should convert single-quotes.html to match snapshot 1`] = `
 exports[`parser vue: should convert textarea-javascript.html to match snapshot 1`] = `
 "html
   body
-    textarea#text-area javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
+    textarea#text-area
+      | javascript:window.s=document.createElement(&amp;apos;script&amp;apos;);window.sc=document.getElementsByTagName(&amp;quot;body&amp;quot;)[0]||document.getElementsByTagName(&amp;quot;head&amp;quot;)[0];s.src=&amp;quot;http://xyz.com/path/app.js&amp;quot;;sc.appendChild(s)
 "
 `;
 
 exports[`parser vue: should convert textarea-with-line-break.html to match snapshot 1`] = `
 "html
   body
-    textarea 
+    textarea
+      | 
+      | 
+      | 
     textarea
       | text1
       | 
       | text2
-    textarea text
+      | 
+      | 
+    textarea
+      | 
+      | text
+      | 
+      | 
 "
 `;
 
