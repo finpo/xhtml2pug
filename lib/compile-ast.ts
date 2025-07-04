@@ -142,6 +142,10 @@ const compileTag = (node: Tag, options: CompileOptions) => {
         } else {
           child.value = decode(child.value, {level: 'html5'});
         }
+        if (!options.preserveWhitespace) {
+            // 避免 \n 被砍掉
+          child.value = child.value.split('\n').map(line => line.trim()).join('\n'); 
+        }
       }
       return child;
     });
