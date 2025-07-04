@@ -40,7 +40,7 @@ const parseAttrs = (attrs: TagAttribute[] = []) =>
     return { key: attr.key.content, value: attr.value?.content };
   });
 
-const parseText = (child: TextNode): Text | null => ({
+const parseText = (child: TextNode): Text => ({
   node: Node.Text,
   value: child.content.value.content,
 });
