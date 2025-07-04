@@ -1,4 +1,4 @@
-import { encode } from "html-entities";
+import { encode, decode } from "html-entities";
 
 import { compileAttrs, formatAttrsForTag, wrapAttrs } from "./compile-attrs";
 import {
@@ -125,14 +125,27 @@ const compileTag = (node: Tag, options: CompileOptions) => {
       .filter(Boolean)
       .join("");
   }
-  
+
   // 移除文字最後的 \n
   node.children = node.children.filter((child) => {
-    if (child.node == 2 && (/^\r\n[ \t]*$/.test(child.value) || /^\n[ \t]*$/.test(child.value))) {
+    if (child.node == 2 && checkLastStrHaveForeSlashN(child.value)) {
       return false;
     }
     return true;
   });
+    
+  if (options.parser === "vue") {
+    node.children = node.children.map((child) => {
+      if (child.node == 2) {
+        if (options.encode) {
+          child.value = encode(child.value);
+        } else {
+          child.value = decode(child.value, {level: 'html5'});
+        }
+      }
+      return child;
+    });
+  }
   const textNode = getFirstText(node.children);
   if (!textNode) return tag;
   const resultText = textNode.value.includes("\n")
@@ -141,13 +154,14 @@ const compileTag = (node: Tag, options: CompileOptions) => {
   return `${tag}${resultText}`;
 };
 
+/**
+ * 檢查字串後面有沒有 \n
+ * @example 'abc \n  ', '\r\n', '\n', '\n  ', '\r\n  ' => true
+ * @example '\n abc', '\r\n abc','abc' => false 
+ * */
+const checkLastStrHaveForeSlashN = (str: string) => (/^\r\n[ \t]*$/.test(str) || /^\n[ \t]*$/.test(str));
+
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
-  /**
-   * 檢查字串後面有沒有 \n
-   * example 'abc \n  ', '\r\n', '\n', '\n  ', '\r\n  ' => true
-   * example '\n abc', '\r\n abc','abc' => false 
-   * */
-  const checkLastStrHaveForeSlashN = (str: string) => (/^\r\n[ \t]*$/.test(str) || /^\n[ \t]*$/.test(str));
   // 移除 !DOCTYPE後面的 \n
   const findDocTypeElementIndex = ast.findIndex((el) => el.node === 0);
   if (findDocTypeElementIndex !== -1) {
@@ -175,6 +189,13 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
       let text: string;
       if (node.node === Node.Text) {
         text = compileText(node, newOptions);
+        if (options.parser === "vue") {
+          if (options.encode) {
+            text = encode(text);
+          } else {
+            text = decode(text, {level: 'html5'});
+          }
+        }
       }
       switch (node.node) {
         case Node.Doctype:

@@ -62,9 +62,9 @@ export const parseAttrs = (
     };
   });
 
-export const parseText = (child: TextNode, options: Partial<PublicOptions>): Text => ({
+export const parseText = (child: TextNode): Text => ({
   node: Node.Text,
-  value: options.preserveWhitespace ? child.loc.source : child.content.trim(),
+  value: child.loc.source,
 });
 export const parseComment = (child: CommentNode): Comment => ({
   node: Node.Comment,
@@ -103,11 +103,11 @@ const parseInterpolation = (child: InterpolationNode): Text => ({
   value: child.loc.source,
 });
 
-export function convertVueAst(ast: RootNode, options: Partial<PublicOptions>): Nodes[] {
+export function convertVueAst(ast: RootNode): Nodes[] {
   const deepConvert = (children: TemplateChildNode[]): Nodes[] =>
     children.reduce<Nodes[]>((acc, child) => {
       if (isText(child)) {
-        return acc.concat(parseText(child, options));
+        return acc.concat(parseText(child));
       }
 
       if (isInterpolation(child)) {
@@ -139,6 +139,6 @@ export function convertVueAst(ast: RootNode, options: Partial<PublicOptions>): N
   return deepConvert(ast.children);
 }
 
-export function buildVueAst(html: string, options: Partial<PublicOptions>) {
-  return convertVueAst(parse(html), options);
+export function buildVueAst(html: string) {
+  return convertVueAst(parse(html));
 }
