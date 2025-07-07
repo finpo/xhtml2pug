@@ -128,7 +128,7 @@ const compileTag = (node: Tag, options: CompileOptions) => {
 
   // 移除文字最後的 \n
   node.children = node.children.filter((child) => {
-    if (child.node == 2 && checkLastStrHaveForeSlashN(child.value)) {
+    if (child.node == Node.Text && isStartWithNewline(child.value)) {
       return false;
     }
     return true;
@@ -136,7 +136,7 @@ const compileTag = (node: Tag, options: CompileOptions) => {
     
   if (options.parser === "vue") {
     node.children = node.children.map((child) => {
-      if (child.node == 2) {
+      if (child.node == Node.Text) {
         if (options.encode) {
           child.value = encode(child.value);
         } else {
@@ -159,29 +159,30 @@ const compileTag = (node: Tag, options: CompileOptions) => {
 };
 
 /**
- * 檢查字串後面有沒有 \n
- * @example 'abc \n  ', '\r\n', '\n', '\n  ', '\r\n  ' => true
- * @example '\n abc', '\r\n abc','abc' => false 
+ * 檢查字串開頭有沒有 \r\n, \n ,只允許 \n後面空白其他字不行
+ * @example '\r\n', '\n', '\n  ', '\r\n  ' => true
+ * @example '\n abc', '\r\n abc', 'abc' => false 
  * */
-const checkLastStrHaveForeSlashN = (str: string) => (/^\r\n[ \t]*$/.test(str) || /^\n[ \t]*$/.test(str));
+const isStartWithNewline = (str: string) => /^\r?\n[ \t]*$/.test(str);
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   // 移除 !DOCTYPE後面的 \n
-  const findDocTypeElementIndex = ast.findIndex((el) => el.node === 0);
+  const findDocTypeElementIndex = ast.findIndex((el) => el.node === Node.Doctype);
   if (findDocTypeElementIndex !== -1) {
     ast = ast.filter((el, index) => {
-      if (index === findDocTypeElementIndex +1 && el.node === 2 && checkLastStrHaveForeSlashN(el.value)){
+      if (index === findDocTypeElementIndex +1 && el.node === Node.Text && isStartWithNewline(el.value)){
         return false;
       }
       return true;
     });
   }
   ast = ast.filter((el, index, arr) => {
-    // node = 2, 屬於文字類型
-    if (el?.node === 2 && checkLastStrHaveForeSlashN(el.value)) {
-      // node = 1(html標籤), 移除html </tag> 的 \n
-      // node = 5(註解), 移除註解下一行的 \n
-      if ([1,5].includes(arr[index - 1]?.node)) {
+    // Node.Text 文字類型
+    if (el?.node === Node.Text && isStartWithNewline(el.value)) {
+      // Node.Tag(html標籤), 移除html </tag> 的 \n
+      // Node.Comment(註解), 移除註解下一行的 \n
+      const lastEl = arr[index - 1];
+      if (lastEl.node == Node.Tag || lastEl.node == Node.Comment) {
         return false;
       }
     }
