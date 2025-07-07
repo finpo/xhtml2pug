@@ -136,16 +136,9 @@ const compileTag = (node: Tag, options: CompileOptions) => {
     
   if (options.parser === "vue") {
     node.children = node.children.map((child) => {
-      if (child.node == Node.Text) {
-        if (options.encode) {
-          child.value = encode(child.value);
-        } else {
-          child.value = decode(child.value, {level: 'html5'});
-        }
-        if (!options.preserveWhitespace) {
-            // 避免 \n 被砍掉
-          child.value = child.value.split('\n').map(line => line.trim()).join('\n'); 
-        }
+      if (child.node == Node.Text && !options.preserveWhitespace) {
+        // 避免 \n 被砍掉
+        child.value = child.value.split('\n').map(line => line.trim()).join('\n'); 
       }
       return child;
     });
@@ -191,17 +184,6 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   const deepCompile = (ast: Nodes[], level = 0): string[] =>
     ast.reduce<string[]>((acc, node) => {
       const newOptions = { level, ...options };
-      let text: string;
-      if (node.node === Node.Text) {
-        text = compileText(node, newOptions);
-        if (options.parser === "vue") {
-          if (options.encode) {
-            text = encode(text);
-          } else {
-            text = decode(text, {level: 'html5'});
-          }
-        }
-      }
       switch (node.node) {
         case Node.Doctype:
           return acc.concat(compileDoctype(node, newOptions));
@@ -210,6 +192,7 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
         case Node.Style:
           return acc.concat(compileStyle(node, newOptions));
         case Node.Text:
+          const text = compileText(node, newOptions);
           return text ? acc.concat(text) : acc;
         case Node.Comment:
           return acc.concat(compileComment(node, newOptions));
