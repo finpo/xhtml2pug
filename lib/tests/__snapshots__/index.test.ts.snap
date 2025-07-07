@@ -304,6 +304,17 @@ exports[`parser html: should convert empty-class.html to match snapshot 1`] = `
 "
 `;
 
+exports[`parser html: should convert encode.html to match snapshot 1`] = `
+"html
+  body
+    p 123
+    p &nbsp;
+    p 123
+    p &lt; 789 &gt;
+    p HTML中，直接用输入法打出来©符号，和用&copy;表示
+"
+`;
+
 exports[`parser html: should convert entity.html to match snapshot 1`] = `
 "html
   body
@@ -3386,13 +3397,24 @@ exports[`parser vue: should convert empty-class.html to match snapshot 1`] = `
 "
 `;
 
+exports[`parser vue: should convert encode.html to match snapshot 1`] = `
+"html
+  body
+    p 123
+    p &nbsp;
+    p 123
+    p &lt; 789 &gt;
+    p HTML中，直接用输入法打出来©符号，和用&copy;表示
+"
+`;
+
 exports[`parser vue: should convert entity.html to match snapshot 1`] = `
 "html
   body
     p Note the lack of the
-      code <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      code &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
       | , which disables the zooming aspect of sites in mobile devices. In addition, we reset our container's width and are basically good to go.
-    p © Company 2013
+    p &copy; Company 2013
 "
 `;
 
@@ -3515,7 +3537,7 @@ exports[`parser vue: should convert textarea-javascript.html to match snapshot 1
 "html
   body
     textarea#text-area
-      | javascript:window.s=document.createElement(&amp;apos;script&amp;apos;);window.sc=document.getElementsByTagName(&amp;quot;body&amp;quot;)[0]||document.getElementsByTagName(&amp;quot;head&amp;quot;)[0];s.src=&amp;quot;http://xyz.com/path/app.js&amp;quot;;sc.appendChild(s)
+      | javascript:window.s=document.createElement(&apos;script&apos;);window.sc=document.getElementsByTagName(&quot;body&quot;)[0]||document.getElementsByTagName(&quot;head&quot;)[0];s.src=&quot;http://xyz.com/path/app.js&quot;;sc.appendChild(s)
 "
 `;
 
