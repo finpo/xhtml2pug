@@ -167,21 +167,17 @@ const isOnlyStartWithNewline = (str: string) => /^\r?\n[ \t]*$/.test(str);
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   // 移除 !DOCTYPE後面的 \n
   const findDocTypeElementIndex = ast.findIndex((el) => el.node === Node.Doctype);
-  if (findDocTypeElementIndex !== -1) {
-    ast = ast.filter((el, index) => {
-      if (index === findDocTypeElementIndex +1 && el.node === Node.Text && isOnlyStartWithNewline(el.value)){
+  ast = ast.filter((el, index, arr) => {
+    if (el?.node === Node.Text && isOnlyStartWithNewline(el.value)) {
+      // 移除 !DOCTYPE後面的 \n
+      if (index === findDocTypeElementIndex +1){
         return false;
       }
-      return true;
-    });
-  }
-  ast = ast.filter((el, index, arr) => {
-    // Node.Text 文字類型
-    if (el?.node === Node.Text && isOnlyStartWithNewline(el.value)) {
+
       // Node.Tag(html標籤), 移除html </tag> 的 \n
       // Node.Comment(註解), 移除註解下一行的 \n
-      const lastEl = arr[index - 1];
-      if (lastEl.node == Node.Tag || lastEl.node == Node.Comment) {
+      const prevEl = arr[index - 1];
+      if (prevEl.node == Node.Tag || prevEl.node == Node.Comment) {
         return false;
       }
     }
