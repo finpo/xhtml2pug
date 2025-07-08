@@ -1,4 +1,4 @@
-import { encode, decode } from "html-entities";
+import { encode } from "html-entities";
 
 import { compileAttrs, formatAttrsForTag, wrapAttrs } from "./compile-attrs";
 import {
