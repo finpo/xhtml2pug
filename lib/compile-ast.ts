@@ -45,27 +45,20 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
 const compileText = (node: Text, options: CompileOptions) => {
   const resultText = node.value
     .split("\n")
-    .filter((str, index, arr) => {
-      // 砍掉文字最後換行完的空白
-      // example:
-      //     text
-      //   </h1>
-      // 指的是</h1>前面的砍掉
-      if (index +1 === arr.length && !str.trim()) {
-        return false;
-      }
-      // 砍掉第一個 '\r',空白值或空字串,避免前面多第一行
-      // '\n    Hello World.\n    blah\n    blah\n\n\n\n    blah\n  '.split('\n')
-      // ['', '    Hello World.', '    blah', '    blah', '', '', '', '    blah', '  ']
-      // example:
-      // <h1>
-      //    text
-      // 指的是<h1>這一行後面的值(不包含text那一行)
-      if (index === 0 && !str.trim()) {
-        return false;
-      }
-      return true;
-    })
+    // 砍掉文字最後換行完的空白(index +1 === arr.length)
+    // example:
+    //     text
+    //   </h1>
+    // 指的是</h1>前面的砍掉
+    //
+    // 砍掉第一個 '\r',空白值或空字串,避免前面多第一行(index === 0)
+    // '\n    Hello World.\n    blah\n    blah\n\n\n\n    blah\n  '.split('\n')
+    // ['', '    Hello World.', '    blah', '    blah', '', '', '', '    blah', '  ']
+    // example:
+    // <h1>
+    //    text
+    // 指的是<h1>這一行後面的值(不包含text那一行)
+    .filter((str, index, arr) => (index +1 === arr.length || index === 0)? !!str.trim() : true)
     .map((str) => `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trim()}`)
     .join("\n");
   return options.encode ? encode(resultText) : resultText;
@@ -135,9 +128,14 @@ const compileTag = (node: Tag, options: CompileOptions) => {
       .join("");
   }
 
-  // 移除文字最後的 \n
+  // 移除 </html標籤>換行(node: 2的那一行移除)
+  // example:
+  // node.children = [
+  //   { node: 1, attrs: [], name: 'p', children: [Array] },
+  //   { node: 2, value: '\r\n ' },
+  // ]
   node.children = node.children.filter((child) => {
-    if (child.node == Node.Text && isStartWithNewline(child.value)) {
+    if (child.node == Node.Text && isOnlyStartWithNewline(child.value)) {
       return false;
     }
     return true;
@@ -146,7 +144,6 @@ const compileTag = (node: Tag, options: CompileOptions) => {
   if (options.parser === "vue") {
     node.children = node.children.map((child) => {
       if (child.node == Node.Text && !options.preserveWhitespace) {
-        // 避免 \n 被砍掉
         child.value = child.value.split('\n').map(line => line.trim()).join('\n'); 
       }
       return child;
@@ -165,14 +162,14 @@ const compileTag = (node: Tag, options: CompileOptions) => {
  * @example '\r\n', '\n', '\n  ', '\r\n  ' => true
  * @example '\n abc', '\r\n abc', 'abc' => false 
  * */
-const isStartWithNewline = (str: string) => /^\r?\n[ \t]*$/.test(str);
+const isOnlyStartWithNewline = (str: string) => /^\r?\n[ \t]*$/.test(str);
 
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   // 移除 !DOCTYPE後面的 \n
   const findDocTypeElementIndex = ast.findIndex((el) => el.node === Node.Doctype);
   if (findDocTypeElementIndex !== -1) {
     ast = ast.filter((el, index) => {
-      if (index === findDocTypeElementIndex +1 && el.node === Node.Text && isStartWithNewline(el.value)){
+      if (index === findDocTypeElementIndex +1 && el.node === Node.Text && isOnlyStartWithNewline(el.value)){
         return false;
       }
       return true;
@@ -180,7 +177,7 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
   }
   ast = ast.filter((el, index, arr) => {
     // Node.Text 文字類型
-    if (el?.node === Node.Text && isStartWithNewline(el.value)) {
+    if (el?.node === Node.Text && isOnlyStartWithNewline(el.value)) {
       // Node.Tag(html標籤), 移除html </tag> 的 \n
       // Node.Comment(註解), 移除註解下一行的 \n
       const lastEl = arr[index - 1];
@@ -201,6 +198,13 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
         case Node.Style:
           return acc.concat(compileStyle(node, newOptions));
         case Node.Text:
+          // 避免多出一行空值(a元素和strong元素中間多一行)
+          // example:
+          // <p>Hey there, <a href="#">html2jade</a> <strong>is awesome</strong></p>
+          // p Hey there, 
+          //  a(href='#') html2jade
+          //
+          //  strong is awesome
           const text = compileText(node, newOptions);
           return text ? acc.concat(text) : acc;
         case Node.Comment:
