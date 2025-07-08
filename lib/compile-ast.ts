@@ -43,23 +43,24 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
   `${getIndent(options)}doctype html`;
 
 const compileText = (node: Text, options: CompileOptions) => {
-  let resultText = '';
-  if (options.preserveWhitespace) {
-    resultText = node.value
-      .split("\n")
-      .filter(Boolean)
-      .filter((str) => str.trim() !== "")
-      .map((str) => `${getIndent(options)}| ${str}`)
-      .join("\n");
-  } else {
-    resultText = node.value
-      .trimEnd()
-      .split("\n")
-      .filter(Boolean)
-      .map((str) => `${getIndent(options)}| ${str.trimStart()}`)
-      .join("\n");
-  }
-  
+  const resultText = node.value
+    .split("\n")
+    // 砍掉文字最後換行完的空白(index +1 === arr.length)
+    // example:
+    //     text
+    //   </h1>
+    // 指的是</h1>前面的砍掉
+    //
+    // 砍掉第一個 '\r',空白值或空字串,避免前面多第一行(index === 0)
+    // '\n    Hello World.\n    blah\n    blah\n\n\n\n    blah\n  '.split('\n')
+    // ['', '    Hello World.', '    blah', '    blah', '', '', '', '    blah', '  ']
+    // example:
+    // <h1>
+    //    text
+    // 指的是<h1>這一行後面的值(不包含text那一行)
+    .filter((str, index, arr) => (index +1 === arr.length || index === 0) ? !!str.trim() : true)
+    .map((str) => `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trim()}`)
+    .join("\n");
   return options.encode ? encode(resultText) : resultText;
 };
 
@@ -127,6 +128,27 @@ const compileTag = (node: Tag, options: CompileOptions) => {
       .join("");
   }
 
+  // 移除 </html標籤>換行(node: 2的那一行移除)
+  // example:
+  // node.children = [
+  //   { node: 1, attrs: [], name: 'p', children: [Array] },
+  //   { node: 2, value: '\r\n ' },
+  // ]
+  node.children = node.children.filter((child) => {
+    if (child.node == Node.Text && isOnlyStartWithNewline(child.value)) {
+      return false;
+    }
+    return true;
+  });
+    
+  if (options.parser === "vue") {
+    node.children = node.children.map((child) => {
+      if (child.node == Node.Text && !options.preserveWhitespace) {
+        child.value = child.value.split('\n').map(line => line.trim()).join('\n'); 
+      }
+      return child;
+    });
+  }
   const textNode = getFirstText(node.children);
   if (!textNode) return tag;
   const resultText = textNode.value.includes("\n")
@@ -135,7 +157,32 @@ const compileTag = (node: Tag, options: CompileOptions) => {
   return `${tag}${resultText}`;
 };
 
+/**
+ * 檢查字串開頭有沒有 \r\n, \n ,只允許 \n後面空白其他字不行
+ * @example '\r\n', '\n', '\n  ', '\r\n  ' => true
+ * @example '\n abc', '\r\n abc', 'abc' => false 
+ * */
+const isOnlyStartWithNewline = (str: string) => /^\r?\n[ \t]*$/.test(str);
+
 export function compileAst(ast: Nodes[], options: ConvertOptions): string {
+  // 移除 !DOCTYPE後面的 \n
+  const findDocTypeElementIndex = ast.findIndex((el) => el.node === Node.Doctype);
+  ast = ast.filter((el, index, arr) => {
+    if (el?.node === Node.Text && isOnlyStartWithNewline(el.value)) {
+      // 移除 !DOCTYPE後面的 \n
+      if (index === findDocTypeElementIndex +1){
+        return false;
+      }
+
+      // Node.Tag(html標籤), 移除html </tag> 的 \n
+      // Node.Comment(註解), 移除註解下一行的 \n
+      const prevEl = arr[index - 1];
+      if (prevEl.node == Node.Tag || prevEl.node == Node.Comment) {
+        return false;
+      }
+    }
+    return true;
+  });
   const deepCompile = (ast: Nodes[], level = 0): string[] =>
     ast.reduce<string[]>((acc, node) => {
       const newOptions = { level, ...options };
@@ -147,7 +194,15 @@ export function compileAst(ast: Nodes[], options: ConvertOptions): string {
         case Node.Style:
           return acc.concat(compileStyle(node, newOptions));
         case Node.Text:
-          return acc.concat(compileText(node, newOptions));
+          // 避免多出一行空值(a元素和strong元素中間多一行)
+          // example:
+          // <p>Hey there, <a href="#">html2jade</a> <strong>is awesome</strong></p>
+          // p Hey there, 
+          //  a(href='#') html2jade
+          //
+          //  strong is awesome
+          const text = compileText(node, newOptions);
+          return text ? acc.concat(text) : acc;
         case Node.Comment:
           return acc.concat(compileComment(node, newOptions));
         case Node.Tag:
