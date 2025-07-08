@@ -58,7 +58,7 @@ const compileText = (node: Text, options: CompileOptions) => {
     // <h1>
     //    text
     // 指的是<h1>這一行後面的值(不包含text那一行)
-    .filter((str, index, arr) => (index +1 === arr.length || index === 0)? !!str.trim() : true)
+    .filter((str, index, arr) => (index +1 === arr.length || index === 0) ? !!str.trim() : true)
     .map((str) => `${getIndent(options)}| ${options.preserveWhitespace ? str : str.trim()}`)
     .join("\n");
   return options.encode ? encode(resultText) : resultText;
