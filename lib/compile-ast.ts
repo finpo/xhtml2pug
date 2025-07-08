@@ -45,14 +45,23 @@ const compileDoctype = (_: Doctype, options: CompileOptions) =>
 const compileText = (node: Text, options: CompileOptions) => {
   const resultText = node.value
     .split("\n")
-    .filter((str, index, arr) => { // 最後的\n砍掉
+    .filter((str, index, arr) => {
+      // 砍掉文字最後換行完的空白
+      // example:
+      //     text
+      //   </h1>
+      // 指的是</h1>前面的砍掉
       if (index +1 === arr.length && !str.trim()) {
         return false;
       }
-      return true;
-    })
-    .filter((str, index, arr) => {
-      if (index === 0 && !str.trim() && arr.length > 1) {
+      // 砍掉第一個 '\r',空白值或空字串,避免前面多第一行
+      // '\n    Hello World.\n    blah\n    blah\n\n\n\n    blah\n  '.split('\n')
+      // ['', '    Hello World.', '    blah', '    blah', '', '', '', '    blah', '  ']
+      // example:
+      // <h1>
+      //    text
+      // 指的是<h1>這一行後面的值(不包含text那一行)
+      if (index === 0 && !str.trim()) {
         return false;
       }
       return true;
