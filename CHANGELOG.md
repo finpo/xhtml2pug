@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.1](https://github.com/finpo/xhtml2pug/compare/v5.3.0...v5.3.1) (2025-07-08)
+
+
+### Bug Fixes
+
+* 保留 HTML→Pug 換行，避免格式跑掉 [#29](https://github.com/finpo/xhtml2pug/issues/29) ([#35](https://github.com/finpo/xhtml2pug/issues/35)) ([28c30c0](https://github.com/finpo/xhtml2pug/commit/28c30c02d52b80d22d8ede8738d894fe43386ffd))
+
 ## [5.3.0](https://github.com/finpo/xhtml2pug/compare/v5.2.0...v5.3.0) (2025-07-01)
 
 
