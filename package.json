@@ -7,8 +7,9 @@
     "bin"
   ],
   "bin": {
-    "xhtml2pug": "bin/xhtml2pug"
+    "xhtml2pug": "bin/xhtml2pug.js"
   },
+  "type": "module",
   "source": "./lib/main.ts",
   "main": "./dist/main.js",
   "module": "./dist/module.js",
@@ -65,6 +66,6 @@
     "get-stdin": "^9.0.0",
     "html-entities": "2.6.0",
     "hyntax": "1.1.9",
-    "yargs": "^17.7.2"
+    "yargs": "^18.0.0"
   }
 }
