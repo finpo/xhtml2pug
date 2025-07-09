@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { hideBin } from "yargs/helpers";
-import Yarg from "yargs";
+import yargs from "yargs";
 import { convert } from "../dist/main.js";
 
 async function init() {
-  const yargs = Yarg(hideBin(process.argv))
+  const argv = yargs(hideBin(process.argv))
     .scriptName("xhtml2pug")
     .usage("$0 [args] < [file]", "converts HTML to Pug")
     .option("bodyLess", {
@@ -83,7 +83,7 @@ async function init() {
   const { default: getStdin } = await import("get-stdin");
   const html = await getStdin();
   if (!html) {
-    yargs.showHelp();
+    argv.showHelp();
     return;
   }
   const {
@@ -98,7 +98,7 @@ async function init() {
     tabs,
     preserveWhitespace,
     unescapedAttributes,
-  } = yargs.argv;
+  } = argv.argv;
   const options = {
     attrComma,
     bodyLess,
