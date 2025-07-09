@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
-
-const { hideBin } = require("yargs/helpers");
-const { convert } = require("../dist/main");
+import { hideBin } from "yargs/helpers";
+// import Yarg from './yarg.js'
+import Yarg from "yargs";
+// const { hideBin } = require("yargs/helpers");
+import { convert } from "../dist/main.js";
 
 async function init() {
-  const yargs = require("yargs")(hideBin(process.argv))
+  const yargs = Yarg(hideBin(process.argv))
     .scriptName("xhtml2pug")
     .usage("$0 [args] < [file]", "converts HTML to Pug")
     .option("bodyLess", {

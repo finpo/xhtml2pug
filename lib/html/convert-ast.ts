@@ -1,6 +1,4 @@
-import {TreeConstructor} from "hyntax";
-import constructTree from "hyntax/lib/construct-tree";
-import tokenize from "hyntax/lib/tokenize";
+import { tokenize, constructTree, TreeConstructor } from "hyntax";
 
 import {
   Comment,
