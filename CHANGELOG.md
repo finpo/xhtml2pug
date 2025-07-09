@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.3.2](https://github.com/finpo/xhtml2pug/compare/v5.3.1...v5.3.2) (2025-07-09)
+
+
+### Bug Fixes
+
+* 解決 yargs v18 使用 require() 導致的 ES Module 問題 [#24](https://github.com/finpo/xhtml2pug/issues/24) ([#37](https://github.com/finpo/xhtml2pug/issues/37)) ([c2a92d9](https://github.com/finpo/xhtml2pug/commit/c2a92d9f4809013ab7b052c17ef5e72d7f42f23f))
+
 ## [5.3.1](https://github.com/finpo/xhtml2pug/compare/v5.3.0...v5.3.1) (2025-07-08)
 
 
