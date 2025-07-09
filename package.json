@@ -7,7 +7,6 @@
     "bin"
   ],
   "bin": {
-    "type": "module",
     "xhtml2pug": "bin/xhtml2pug.js"
   },
   "type": "module",
