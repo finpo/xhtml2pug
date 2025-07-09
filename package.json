@@ -7,8 +7,10 @@
     "bin"
   ],
   "bin": {
-    "xhtml2pug": "bin/xhtml2pug"
+    "type": "module",
+    "xhtml2pug": "bin/xhtml2pug.js"
   },
+  "type": "module",
   "source": "./lib/main.ts",
   "main": "./dist/main.js",
   "module": "./dist/module.js",
